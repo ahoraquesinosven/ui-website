@@ -1,0 +1,15 @@
+{
+  "name": "@observatorio/ui-website",
+  "version": "1.0.0",
+  "description": "Public website for the Observatorio de las Violencias de Género “Ahora Que Sí Nos Ven”",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahoraquesinosven/ui-website.git"
+  },
+  "author": "Ahora Que Si Nos Ven",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahoraquesinosven/ui-website/issues"
+  },
+  "homepage": "https://github.com/ahoraquesinosven/ui-website#readme"
+}

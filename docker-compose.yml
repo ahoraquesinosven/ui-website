@@ -1,0 +1,10 @@
+version: "3"
+services:
+  gatsby:
+    image: "observatorio/website"
+    container_name: "website"
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development

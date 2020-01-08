@@ -11,5 +11,8 @@ RUN npm install
 # Setup the pages
 COPY pages ./pages
 
+# Compile the application
+RUN npm run build
+
 # Setup starting command
 CMD ["npm", "start"]

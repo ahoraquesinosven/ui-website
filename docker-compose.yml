@@ -1,10 +1,15 @@
 version: "3"
 services:
   gatsby:
-    image: "observatorio/website"
+    image: "observatorio/ui-website"
     container_name: "website"
     build: .
-    volumes:
-      - .:/app
+    command: npm run dev
     environment:
       - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./pages:/app/pages/
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json

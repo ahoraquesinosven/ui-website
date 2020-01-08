@@ -5,5 +5,11 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Setup project dependencies
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
+
+# Setup the pages
+COPY pages ./pages
+
+# Setup starting command
+CMD ["npm", "start"]

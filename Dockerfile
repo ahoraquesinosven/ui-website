@@ -10,6 +10,7 @@ RUN npm install
 
 # Setup the pages
 COPY pages ./pages
+COPY components ./components
 
 # Compile the application
 RUN npm run build

@@ -1,8 +1,13 @@
+import Link from 'next/link';
+import Layout from '../components/layout';
+
 const Index = () => ( 
-  <div>
-    <h1>Observatorio</h1>
-    <p>Este es el homepage del observatorio</p>
-  </div>
+  <Layout>
+    <p>Este es el root del observatorio</p>
+    <Link href='about'>
+      <a>Acerca de nosotres</a>
+    </Link>
+  </Layout>
 );
 
 export default Index;

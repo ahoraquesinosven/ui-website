@@ -3,7 +3,7 @@ import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Application = ({Component, pageProps}) => (
-  <div>
+  <>
     <nav className='navbar navbar-dark bg-primary'>
       <div className='container'>
         <Link href='/'>
@@ -14,7 +14,7 @@ const Application = ({Component, pageProps}) => (
     <div className='container'>
       <Component {...pageProps} />
     </div>
-  </div>
+  </>
 );
 
 export default Application;

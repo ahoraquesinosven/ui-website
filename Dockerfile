@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 # Setup the pages
-COPY pages ./pages
+COPY src ./src
 
 # Compile the application
 RUN npm run build

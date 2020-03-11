@@ -1,6 +1,6 @@
 version: "3"
 services:
-  gatsby:
+  website:
     image: "observatorio/ui-website"
     container_name: "website"
     build: .
@@ -10,6 +10,6 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./pages:/app/pages/
+      - ./src:/app/src/
       - ./package.json:/app/package.json
       - ./package-lock.json:/app/package-lock.json

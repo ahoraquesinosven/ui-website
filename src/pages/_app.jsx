@@ -10,7 +10,7 @@ const Footer = () => (
 
 const Application = ({Component, pageProps}) => (
   <>
-    <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+    <nav className='navbar navbar-expand-lg sticky-top navbar-dark bg-primary'>
       <div className='container'>
         <Link href='/'>
           <a className='navbar-brand'>Observatorio</a>

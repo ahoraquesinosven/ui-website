@@ -2,6 +2,12 @@ import Link from "next/link";
 
 import 'bootstrap/dist/css/bootstrap.css';
 
+const Footer = () => (
+  <footer className='container'>
+    <strong>TODO</strong>: Implement this footer
+  </footer>
+);
+
 const Application = ({Component, pageProps}) => (
   <>
     <nav className='navbar navbar-dark bg-primary'>
@@ -11,9 +17,10 @@ const Application = ({Component, pageProps}) => (
         </Link>
       </div>
     </nav>
-    <div className='container'>
+    <section className='container'>
       <Component {...pageProps} />
-    </div>
+    </section>
+    <Footer />
   </>
 );
 

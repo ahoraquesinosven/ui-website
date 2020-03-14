@@ -8,19 +8,19 @@ const Header = () => (
       <Link href='/'>
         <a className='navbar-brand'>Observatorio</a>
       </Link>
-      <Link href="./report">
+      <Link href="/report">
         <a className="nav-item nav-link text-light">Informes</a>
       </Link>
-      <Link href="./campaign">
+      <Link href="/campaign">
         <a className="nav-item nav-link text-light">Campañas</a>
       </Link>
-      <Link  href="./mediapresence">
+      <Link  href="/mediapresence">
         <a className="nav-item nav-link text-light">En Los Medios</a>
       </Link>
-      <Link href="./activity">
+      <Link href="/activity">
         <a className="nav-item nav-link text-light">Actividades</a>
       </Link>
-      <Link href="./about">
+      <Link href="/about">
         <a className="nav-item nav-link text-light">Quiénes Somos</a>
       </Link>
    </div>

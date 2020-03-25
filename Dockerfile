@@ -10,6 +10,8 @@ RUN npm install
 
 # Setup the pages
 COPY src ./src
+COPY public ./public 
+
 
 # Compile the application
 RUN npm run build

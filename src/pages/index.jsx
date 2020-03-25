@@ -29,6 +29,7 @@ const Intro = () => (
   </Carousel>
 );
 
+
 const ImportantSections = () => (
   <section name="important-sections">
     TODO: Implement this `important sections` section

@@ -1,5 +1,5 @@
 const About = () => ( 
-  <p>Este es el about del observatorio</p>
+  <p><strong>TODO:</strong> Implement the about page</p>
 );
 
 export default About;

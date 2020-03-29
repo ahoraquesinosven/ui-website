@@ -1,7 +1,9 @@
+import Container from 'react-bootstrap/Container';
+
 const Reports = () => (
-  <p>
-    TODO: Implement the reports page
-  </p>
+  <Container>
+    <p>TODO: Implement the reports page</p>
+  </Container>
 );
 
 export default Reports;

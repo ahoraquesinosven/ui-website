@@ -1,5 +1,9 @@
+import Container from 'react-bootstrap/Container';
+
 const About = () => (
-  <p>TODO: Implement the about page</p>
+  <Container>
+    <p>TODO: Implement the about page</p>
+  </Container>
 );
 
 export default About;

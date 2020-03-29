@@ -1,5 +1,9 @@
+import Container from 'react-bootstrap/Container';
+
 const MediaPresence = () => (
-  <p>TODO: Implement the media presence page</p>
+  <Container>
+    <p>TODO: Implement the media presence page</p>
+  </Container>
 );
 
 export default MediaPresence;

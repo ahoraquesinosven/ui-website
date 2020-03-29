@@ -1,5 +1,5 @@
 const Activities = () => (
-  <p><strong>TODO:</strong> Implement the activities page</p>
+  <p>TODO: Implement the activities page</p>
 );
 
 export default Activities;

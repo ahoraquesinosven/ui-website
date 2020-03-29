@@ -1,5 +1,7 @@
-const Reports= () => (
-  <p><strong>TODO:</strong> Implement the reports page</p>
+const Reports = () => (
+  <p>
+    TODO: Implement the reports page
+  </p>
 );
 
 export default Reports;

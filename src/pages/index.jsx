@@ -6,6 +6,9 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 
+import fetchFeaturedContent from '../data/featured-content';
+
+
 const IntroItem = ({ caption, message }) => (
   <>
     <svg width="100%" height="800px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
@@ -85,20 +88,31 @@ const ImportantSections = () => (
   </section>
 );
 
-const LatestNews = () => (
+const LatestNews = ({ featuredContent }) => (
   <section name="latest-news">
-    TODO: Implement this `latest news` section
+    { featuredContent.map((content) => (
+      <div key={content.id}>{content.Title}</div>
+    )) }
   </section>
 );
 
-const Index = () => (
+const Index = ({ featuredContent }) => (
   <>
     <Intro />
     <Container className="mt-2 mt-md-5">
       <ImportantSections />
-      <LatestNews />
+      <LatestNews featuredContent={featuredContent} />
     </Container>
   </>
 );
 
 export default Index;
+
+export async function getServerSideProps() {
+  const featuredContent = await fetchFeaturedContent();
+  return {
+    props: {
+      featuredContent,
+    },
+  };
+}

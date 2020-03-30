@@ -1,0 +1,82 @@
+const mockFeaturedContent = [
+  {
+    id: 3,
+    Title: 'Campaign 1',
+    Summary: 'Summary del primer campaign\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet ipsum in justo ullamcorper accumsan eget sed metus. Nam bibendum egestas rhoncus. Maecenas ante purus, fringilla at nunc et, suscipit gravida sapien. Fusce porta ut purus sed mattis. Maecenas ultrices mollis finibus. Suspendisse luctus turpis at arcu semper sollicitudin sed et est. Aliquam rhoncus dolor consectetur, mattis magna eget, lacinia elit. Vivamus lacinia ex sed eros ultrices suscipit. Mauris suscipit velit ut massa sodales, quis faucibus odio pulvinar. Sed tristique dolor id nulla iaculis rhoncus. Sed finibus luctus ipsum at consectetur. Ut iaculis sollicitudin turpis, malesuada vehicula augue varius et.',
+    Activity: null,
+    Campaign: {
+      id: 1,
+      Title: 'Campaign 1',
+      LaunchDate: '2020-03-01',
+      LawNumber: null,
+      Summary: 'Primer campaign\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet ipsum in justo ullamcorper accumsan eget sed metus. Nam bibendum egestas rhoncus. Maecenas ante purus, fringilla at nunc et, suscipit gravida sapien. Fusce porta ut purus sed mattis. Maecenas ultrices mollis finibus. Suspendisse luctus turpis at arcu semper sollicitudin sed et est. Aliquam rhoncus dolor consectetur, mattis magna eget, lacinia elit. Vivamus lacinia ex sed eros ultrices suscipit. Mauris suscipit velit ut massa sodales, quis faucibus odio pulvinar. Sed tristique dolor id nulla iaculis rhoncus. Sed finibus luctus ipsum at consectetur. Ut iaculis sollicitudin turpis, malesuada vehicula augue varius et.\n\nUt id augue at nisi cursus consequat vitae sit amet enim. Praesent lacinia rhoncus lobortis. Integer sed nisi leo. Nullam porta nisl mollis leo mollis, et ultrices mauris volutpat. Maecenas pharetra sapien ligula, eu maximus eros feugiat vitae. Mauris rutrum faucibus lectus nec condimentum. Duis porta risus luctus sem varius gravida. Nulla tellus risus, tempor at turpis at, viverra pretium velit. Phasellus vestibulum, erat lacinia lacinia tempor, massa urna iaculis ligula, id lobortis lorem dui quis ex. Ut non ligula suscipit, congue urna et, gravida orci. Sed gravida imperdiet dapibus. Aliquam eget varius enim.\n\nVivamus ut nunc urna. Etiam molestie neque sed odio sodales porta. Praesent porttitor augue in malesuada dapibus. Pellentesque feugiat, magna et accumsan blandit, nisi ex mollis nisl, ut pharetra massa justo et mi. Ut gravida ligula quis felis semper, vel elementum libero consequat. Fusce sit amet posuere felis, et finibus odio. Morbi tincidunt dolor et arcu ultrices rutrum. Etiam faucibus arcu consequat dolor pulvinar, eu placerat quam iaculis. Donec feugiat, lacus at rhoncus tempor, mi augue gravida felis, et pretium felis diam ac urna. Sed sodales nibh a libero efficitur, sit amet mattis ex efficitur. Sed vehicula posuere ornare. Duis eu imperdiet diam, et suscipit lacus. Aenean accumsan auctor risus, ut scelerisque lorem varius id.\n\nFusce dictum velit nec nulla tristique, non tincidunt nisl euismod. Fusce sollicitudin odio at odio placerat, sit amet hendrerit lacus condimentum. Etiam pellentesque posuere bibendum. Fusce gravida vel massa in hendrerit. Etiam ullamcorper aliquam quam, vitae pharetra felis euismod in. Etiam congue mi sem, et auctor dolor varius id. Maecenas tincidunt ut erat at fermentum. Vestibulum interdum orci sit amet libero suscipit lacinia quis id libero.\n\nSed nec nulla sed augue viverra tristique in quis lorem. Proin facilisis, ipsum eu tempus facilisis, est tellus mattis dui, non mollis tellus nibh ac turpis. Nam porttitor mi sed eros consequat, quis sollicitudin nibh sodales. Phasellus auctor viverra arcu et fringilla. Ut malesuada eros vitae erat vestibulum molestie. Ut ornare lectus sem, eget pellentesque urna euismod eget. Aenean eu hendrerit odio. Vestibulum tincidunt a augue vel gravida. Nunc dui quam, finibus iaculis orci a, blandit tempus tellus. Ut ac rutrum nulla, vitae laoreet lorem. ',
+      Slug: 'campaign-1',
+      created_at: '2020-03-30T00:12:16.472Z',
+      updated_at: '2020-03-30T00:12:16.472Z',
+      MainImage: null,
+      AdditionalImages: [],
+      Attachment: null,
+    },
+    MediaPresence: null,
+    Report: null,
+    created_at: '2020-03-30T00:26:52.194Z',
+    updated_at: '2020-03-30T00:33:54.744Z',
+    Thumbnail: null,
+  },
+  {
+    id: 4,
+    Title: 'Media Presence 1',
+    Summary: 'Summary del primer media presence.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet ipsum in justo ullamcorper accumsan eget sed metus. Nam bibendum egestas rhoncus. Maecenas ante purus, fringilla at nunc et, suscipit gravida sapien. Fusce porta ut purus sed mattis. Maecenas ultrices mollis finibus. Suspendisse luctus turpis at arcu semper sollicitudin sed et est. Aliquam rhoncus dolor consectetur, mattis magna eget, lacinia elit. Vivamus lacinia ex sed eros ultrices suscipit. Mauris suscipit velit ut massa sodales, quis faucibus odio pulvinar. Sed tristique dolor id nulla iaculis rhoncus. Sed finibus luctus ipsum at consectetur. Ut iaculis sollicitudin turpis, malesuada vehicula augue varius et.',
+    Activity: null,
+    Campaign: null,
+    MediaPresence: {
+      id: 1,
+      Title: 'Media presence 1',
+      Content: 'Primer mediapresence\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet ipsum in justo ullamcorper accumsan eget sed metus. Nam bibendum egestas rhoncus. Maecenas ante purus, fringilla at nunc et, suscipit gravida sapien. Fusce porta ut purus sed mattis. Maecenas ultrices mollis finibus. Suspendisse luctus turpis at arcu semper sollicitudin sed et est. Aliquam rhoncus dolor consectetur, mattis magna eget, lacinia elit. Vivamus lacinia ex sed eros ultrices suscipit. Mauris suscipit velit ut massa sodales, quis faucibus odio pulvinar. Sed tristique dolor id nulla iaculis rhoncus. Sed finibus luctus ipsum at consectetur. Ut iaculis sollicitudin turpis, malesuada vehicula augue varius et.\n\nUt id augue at nisi cursus consequat vitae sit amet enim. Praesent lacinia rhoncus lobortis. Integer sed nisi leo. Nullam porta nisl mollis leo mollis, et ultrices mauris volutpat. Maecenas pharetra sapien ligula, eu maximus eros feugiat vitae. Mauris rutrum faucibus lectus nec condimentum. Duis porta risus luctus sem varius gravida. Nulla tellus risus, tempor at turpis at, viverra pretium velit. Phasellus vestibulum, erat lacinia lacinia tempor, massa urna iaculis ligula, id lobortis lorem dui quis ex. Ut non ligula suscipit, congue urna et, gravida orci. Sed gravida imperdiet dapibus. Aliquam eget varius enim.\n\nVivamus ut nunc urna. Etiam molestie neque sed odio sodales porta. Praesent porttitor augue in malesuada dapibus. Pellentesque feugiat, magna et accumsan blandit, nisi ex mollis nisl, ut pharetra massa justo et mi. Ut gravida ligula quis felis semper, vel elementum libero consequat. Fusce sit amet posuere felis, et finibus odio. Morbi tincidunt dolor et arcu ultrices rutrum. Etiam faucibus arcu consequat dolor pulvinar, eu placerat quam iaculis. Donec feugiat, lacus at rhoncus tempor, mi augue gravida felis, et pretium felis diam ac urna. Sed sodales nibh a libero efficitur, sit amet mattis ex efficitur. Sed vehicula posuere ornare. Duis eu imperdiet diam, et suscipit lacus. Aenean accumsan auctor risus, ut scelerisque lorem varius id.\n\nFusce dictum velit nec nulla tristique, non tincidunt nisl euismod. Fusce sollicitudin odio at odio placerat, sit amet hendrerit lacus condimentum. Etiam pellentesque posuere bibendum. Fusce gravida vel massa in hendrerit. Etiam ullamcorper aliquam quam, vitae pharetra felis euismod in. Etiam congue mi sem, et auctor dolor varius id. Maecenas tincidunt ut erat at fermentum. Vestibulum interdum orci sit amet libero suscipit lacinia quis id libero.\n\nSed nec nulla sed augue viverra tristique in quis lorem. Proin facilisis, ipsum eu tempus facilisis, est tellus mattis dui, non mollis tellus nibh ac turpis. Nam porttitor mi sed eros consequat, quis sollicitudin nibh sodales. Phasellus auctor viverra arcu et fringilla. Ut malesuada eros vitae erat vestibulum molestie. Ut ornare lectus sem, eget pellentesque urna euismod eget. Aenean eu hendrerit odio. Vestibulum tincidunt a augue vel gravida. Nunc dui quam, finibus iaculis orci a, blandit tempus tellus. Ut ac rutrum nulla, vitae laoreet lorem. ',
+      Source: 'Google',
+      SourceLink: 'https:\/\/google.com',
+      PublicationDate: '2020-03-01',
+      Slug: 'media-presence-1',
+      created_at: '2020-03-30T00:13:06.724Z',
+      updated_at: '2020-03-30T00:13:06.724Z',
+      MainImage: null,
+    },
+    Report: null,
+    created_at: '2020-03-30T00:27:45.439Z',
+    updated_at: '2020-03-30T00:27:45.444Z',
+    Thumbnail: null,
+  },
+  {
+    id: 2,
+    Title: 'Reporte 1',
+    Summary: 'Summary del primer report.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet ipsum in justo ullamcorper accumsan eget sed metus. Nam bibendum egestas rhoncus. Maecenas ante purus, fringilla at nunc et, suscipit gravida sapien. Fusce porta ut purus sed mattis. Maecenas ultrices mollis finibus. Suspendisse luctus turpis at arcu semper sollicitudin sed et est. Aliquam rhoncus dolor consectetur, mattis magna eget, lacinia elit. Vivamus lacinia ex sed eros ultrices suscipit. Mauris suscipit velit ut massa sodales, quis faucibus odio pulvinar. Sed tristique dolor id nulla iaculis rhoncus. Sed finibus luctus ipsum at consectetur. Ut iaculis sollicitudin turpis, malesuada vehicula augue varius et.',
+    Activity: null,
+    Campaign: null,
+    MediaPresence: null,
+    Report: {
+      id: 1,
+      Title: 'Report 1',
+      Summary: 'Primer report\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet ipsum in justo ullamcorper accumsan eget sed metus. Nam bibendum egestas rhoncus. Maecenas ante purus, fringilla at nunc et, suscipit gravida sapien. Fusce porta ut purus sed mattis. Maecenas ultrices mollis finibus. Suspendisse luctus turpis at arcu semper sollicitudin sed et est. Aliquam rhoncus dolor consectetur, mattis magna eget, lacinia elit. Vivamus lacinia ex sed eros ultrices suscipit. Mauris suscipit velit ut massa sodales, quis faucibus odio pulvinar. Sed tristique dolor id nulla iaculis rhoncus. Sed finibus luctus ipsum at consectetur. Ut iaculis sollicitudin turpis, malesuada vehicula augue varius et.\n\nUt id augue at nisi cursus consequat vitae sit amet enim. Praesent lacinia rhoncus lobortis. Integer sed nisi leo. Nullam porta nisl mollis leo mollis, et ultrices mauris volutpat. Maecenas pharetra sapien ligula, eu maximus eros feugiat vitae. Mauris rutrum faucibus lectus nec condimentum. Duis porta risus luctus sem varius gravida. Nulla tellus risus, tempor at turpis at, viverra pretium velit. Phasellus vestibulum, erat lacinia lacinia tempor, massa urna iaculis ligula, id lobortis lorem dui quis ex. Ut non ligula suscipit, congue urna et, gravida orci. Sed gravida imperdiet dapibus. Aliquam eget varius enim.\n\nVivamus ut nunc urna. Etiam molestie neque sed odio sodales porta. Praesent porttitor augue in malesuada dapibus. Pellentesque feugiat, magna et accumsan blandit, nisi ex mollis nisl, ut pharetra massa justo et mi. Ut gravida ligula quis felis semper, vel elementum libero consequat. Fusce sit amet posuere felis, et finibus odio. Morbi tincidunt dolor et arcu ultrices rutrum. Etiam faucibus arcu consequat dolor pulvinar, eu placerat quam iaculis. Donec feugiat, lacus at rhoncus tempor, mi augue gravida felis, et pretium felis diam ac urna. Sed sodales nibh a libero efficitur, sit amet mattis ex efficitur. Sed vehicula posuere ornare. Duis eu imperdiet diam, et suscipit lacus. Aenean accumsan auctor risus, ut scelerisque lorem varius id.\n\nFusce dictum velit nec nulla tristique, non tincidunt nisl euismod. Fusce sollicitudin odio at odio placerat, sit amet hendrerit lacus condimentum. Etiam pellentesque posuere bibendum. Fusce gravida vel massa in hendrerit. Etiam ullamcorper aliquam quam, vitae pharetra felis euismod in. Etiam congue mi sem, et auctor dolor varius id. Maecenas tincidunt ut erat at fermentum. Vestibulum interdum orci sit amet libero suscipit lacinia quis id libero.\n\nSed nec nulla sed augue viverra tristique in quis lorem. Proin facilisis, ipsum eu tempus facilisis, est tellus mattis dui, non mollis tellus nibh ac turpis. Nam porttitor mi sed eros consequat, quis sollicitudin nibh sodales. Phasellus auctor viverra arcu et fringilla. Ut malesuada eros vitae erat vestibulum molestie. Ut ornare lectus sem, eget pellentesque urna euismod eget. Aenean eu hendrerit odio. Vestibulum tincidunt a augue vel gravida. Nunc dui quam, finibus iaculis orci a, blandit tempus tellus. Ut ac rutrum nulla, vitae laoreet lorem. ',
+      FromDate: '2020-03-01',
+      ToDate: '2020-03-07',
+      LawNumber: '1234',
+      Category: null,
+      Slug: 'report-1',
+      created_at: '2020-03-30T00:14:25.677Z',
+      updated_at: '2020-03-30T00:14:25.677Z',
+      MainImage: null,
+      Attachment: null,
+      AdditionalImages: [],
+    },
+    created_at: '2020-03-30T00:26:18.494Z',
+    updated_at: '2020-03-30T00:26:18.501Z',
+    Thumbnail: null,
+  },
+];
+
+// const response = await fetch('http://localhost:1337/featured-contents?_sort=updated_at:DESC&_limit=3');
+// const featuredContent = await response.json();
+
+const fetchFeaturedContent = async () => mockFeaturedContent;
+
+export default fetchFeaturedContent;

@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
-import Link from "next/link";
+import Link from 'next/link';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
 
 const Header = () => (
   <Navbar bg="primary" variant="dark" expand="md" sticky="top">
     <Container>
-      <Link href='/' passHref>
+      <Link href="/" passHref>
         <Navbar.Brand>Observatorio</Navbar.Brand>
       </Link>
       <Navbar.Toggle />
@@ -31,17 +31,18 @@ const Header = () => (
           </Link>
         </Nav>
       </Navbar.Collapse>
-   </Container>
+    </Container>
   </Navbar>
 );
 
 const Footer = () => (
   <Container as="footer">
-    <strong>TODO</strong>: Implement this footer
+    <strong>TODO</strong>
+    : Implement this footer
   </Container>
 );
 
-const Application = ({Component, pageProps}) => (
+const Application = ({ Component, pageProps }) => (
   <>
     <Header />
     <Container as="section">

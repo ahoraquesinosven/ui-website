@@ -1,5 +1,9 @@
+import Container from 'react-bootstrap/Container';
+
 const Activities = () => (
-  <p>TODO: Implement the activities page</p>
+  <Container>
+    <p>TODO: Implement the activities page</p>
+  </Container>
 );
 
 export default Activities;

@@ -1,5 +1,7 @@
+import Container from 'react-bootstrap/Container';
+
 const Campaigns = () => (
-  <>
+  <Container>
     <p>TODO: Implement the campaigns page</p>
 
     <p>
@@ -304,7 +306,7 @@ const Campaigns = () => (
       iaculis sagittis nec vel neque. Ut eget neque tempus, feugiat ipsum in,
       venenatis nibh. Nunc et ultricies nibh.
     </p>
-  </>
+  </Container>
 );
 
 export default Campaigns;

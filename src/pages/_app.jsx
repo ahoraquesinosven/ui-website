@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 
 const Header = () => (
-  <Navbar bg="primary" variant="dark" expand="md" sticky="top">
+  <Navbar bg="dark" variant="dark" expand="md" sticky="top">
     <Container>
       <Link href="/" passHref>
         <Navbar.Brand>Observatorio</Navbar.Brand>
@@ -43,13 +43,13 @@ const Footer = () => (
 );
 
 const Application = ({ Component, pageProps }) => (
-  <>
+  <div className="d-flex flex-column min-vh-100">
     <Header />
-    <Container as="section">
+    <section name="main" className="flex-grow-1">
       <Component {...pageProps} />
-    </Container>
+    </section>
     <Footer />
-  </>
+  </div>
 );
 
 export default Application;

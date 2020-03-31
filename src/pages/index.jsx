@@ -1,5 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const IntroItem = ({ caption, message }) => (
   <>
@@ -32,7 +34,17 @@ const Intro = () => (
 
 const ImportantSections = () => (
   <section name="important-sections">
-    TODO: Implement this `important sections` section
+    <Row>
+      <Col md={4}>
+        Column 1
+      </Col>
+      <Col md={4}>
+        Column2
+      </Col>
+      <Col md={4}>
+        Column 3
+      </Col>
+    </Row>
   </section>
 );
 

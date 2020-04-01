@@ -2,6 +2,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 
 const IntroItem = ({ caption, message }) => (
   <>
@@ -33,16 +36,31 @@ const Intro = () => (
 
 
 const ImportantSections = () => (
-  <section name="important-sections">
+  <section name="important-sections" className="text-center mb-2 mt-mb-5">
     <Row>
       <Col md={4}>
-        Column 1
+        <Image src="/images/informe-1.jpg" roundedCircle fluid />
+        <h4>Registro de Femicidios</h4>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna.</p>
+        <Link href="/reports" passHref>
+          <Button variant="dark">Ver detalles »</Button>
+        </Link>
       </Col>
       <Col md={4}>
-        Column2
+        <Image src="/images/iconos-01.jpg" roundedCircle fluid />
+        <h4>Ultima Campaña</h4>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna.</p>
+        <Link href="/campaigns" passHref>
+          <Button variant="dark">Ver detalles »</Button>
+        </Link>
       </Col>
       <Col md={4}>
-        Column 3
+        <Image src="/images/radio-1.jpg" roundedCircle fluid />
+        <h4>Escuchanos</h4>
+        <p>Modo Glitter....nuestra radio.....asdasdasdasdsadasd</p>
+        <a href="https://www.instagram.com/modoglitter/" rel="noopener">
+          <Button variant="dark">Ver detalles »</Button>
+        </a>
       </Col>
     </Row>
   </section>
@@ -57,7 +75,7 @@ const LatestNews = () => (
 const Index = () => (
   <>
     <Intro />
-    <Container>
+    <Container className="mt-2 mt-md-5">
       <ImportantSections />
       <LatestNews />
     </Container>

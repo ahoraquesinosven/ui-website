@@ -4,6 +4,9 @@ FROM node:13
 RUN mkdir -p /app
 WORKDIR /app
 
+# Setup linter rules
+COPY .eslintrc ./
+
 # Setup project dependencies
 COPY package*.json ./
 RUN npm install

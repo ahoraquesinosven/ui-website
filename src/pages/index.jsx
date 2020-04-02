@@ -34,34 +34,53 @@ const Intro = () => (
   </Carousel>
 );
 
+const ImportantSectionColumn = ({
+  imageUrl, title, description, linkUrl,
+}) => {
+  let linkElement;
+  if (linkUrl.startsWith('http')) {
+    linkElement = (
+      <Button href={linkUrl} rel="noopener noreferrer" target="_blank" variant="primary">Ver detalles »</Button>
+    );
+  } else {
+    linkElement = (
+      <Link href={linkUrl} passHref>
+        <Button variant="primary">Ver detalles »</Button>
+      </Link>
+    );
+  }
+
+  return (
+    <Col md={4} className="d-flex flex-column align-items-center">
+      <Image src={imageUrl} roundedCircle fluid />
+      <h4>{title}</h4>
+      <p className="flex-grow-1">{description}</p>
+      {linkElement}
+    </Col>
+  );
+};
 
 const ImportantSections = () => (
   <section name="important-sections" className="text-center mb-2 mt-mb-5">
     <Row>
-      <Col md={4}>
-        <Image src="/images/informe-1.jpg" roundedCircle fluid />
-        <h4>Registro de Femicidios</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna.</p>
-        <Link href="/reports" passHref>
-          <Button variant="dark">Ver detalles »</Button>
-        </Link>
-      </Col>
-      <Col md={4}>
-        <Image src="/images/iconos-01.jpg" roundedCircle fluid />
-        <h4>Ultima Campaña</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna.</p>
-        <Link href="/campaigns" passHref>
-          <Button variant="dark">Ver detalles »</Button>
-        </Link>
-      </Col>
-      <Col md={4}>
-        <Image src="/images/radio-1.jpg" roundedCircle fluid />
-        <h4>Escuchanos</h4>
-        <p>Modo Glitter....nuestra radio.....asdasdasdasdsadasd</p>
-        <a href="https://www.instagram.com/modoglitter/" rel="noopener">
-          <Button variant="dark">Ver detalles »</Button>
-        </a>
-      </Col>
+      <ImportantSectionColumn
+        imageUrl="/images/informe-1.jpg"
+        title="Registro de Femicidios"
+        description="Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna."
+        linkUrl="/reports"
+      />
+      <ImportantSectionColumn
+        imageUrl="/images/iconos-01.jpg"
+        title="Ultima Campaña"
+        description="Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna."
+        linkUrl="/campaigns"
+      />
+      <ImportantSectionColumn
+        imageUrl="/images/radio-1.jpg"
+        title="Escuchanos"
+        description="Modo Glitter....nuestra radio.....asdasdasdasdsadasd."
+        linkUrl="https://www.instagram.com/modoglitter/"
+      />
     </Row>
   </section>
 );

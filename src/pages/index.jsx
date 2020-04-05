@@ -5,18 +5,21 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import moment from 'moment';
 
 import fetchFeaturedContent from '../data/featured-content';
 
+moment.locale("es");
 
-const IntroItem = ({ caption, message }) => (
+
+const IntroItem = ({caption, message}) => (
   <>
-    <svg width="100%" height="800px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+    <svg width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
       <rect width="100%" height="100%" fill="#777" />
     </svg>
     <Carousel.Caption>
-      <h2>{ caption }</h2>
-      <p>{ message }</p>
+      <h2>{caption}</h2>
+      <p>{message}</p>
     </Carousel.Caption>
   </>
 );
@@ -64,7 +67,7 @@ const ImportantSectionColumn = ({
 };
 
 const ImportantSections = () => (
-  <section name="important-sections" className="text-center mb-2 mt-mb-5">
+  <section name="important-sections" className="text-center">
     <Row>
       <ImportantSectionColumn
         imageUrl="/images/informe-1.jpg"
@@ -88,19 +91,36 @@ const ImportantSections = () => (
   </section>
 );
 
-const LatestNews = ({ featuredContent }) => (
+const LatestNewsContent = ({content}) => (
+  <Col>
+    <a href="https://google.com" className="text-primary text-decoration-none">
+      <svg className="rounded img-fluid" xmlns="http://www.w3.org/2000/svg" >
+        <rect width="100%" height="100%" fill="#868e96"></rect>
+      </svg>
+      <h3>{content.Title}</h3>
+    </a>
+    <span className="text-muted">{moment(content.updated_at).fromNow()}</span>
+    <p>{content.Summary}</p>
+  </Col>
+);
+
+const LatestNews = ({featuredContent}) => (
   <section name="latest-news">
-    { featuredContent.map((content) => (
-      <div key={content.id}>{content.Title}</div>
-    )) }
+    <h2>Últimas noticias</h2>
+    <Row lg={4} md={2} sm={1}>
+      {featuredContent.map((content) => (
+        <LatestNewsContent key={content.id} content={content} />
+      ))}
+    </Row>
   </section>
 );
 
-const Index = ({ featuredContent }) => (
+const Index = ({featuredContent}) => (
   <>
     <Intro />
     <Container className="mt-2 mt-md-5">
       <ImportantSections />
+      <hr className="w-50 mx-auto my-5" />
       <LatestNews featuredContent={featuredContent} />
     </Container>
   </>

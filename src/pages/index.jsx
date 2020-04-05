@@ -5,14 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
-import moment from 'moment';
 
 import fetchFeaturedContent from '../data/featured-content';
+import LatestNews from '../components/index/latest-news';
 
-moment.locale("es");
-
-
-const IntroItem = ({caption, message}) => (
+const IntroItem = ({ caption, message }) => (
   <>
     <svg width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
       <rect width="100%" height="100%" fill="#777" />
@@ -91,31 +88,7 @@ const ImportantSections = () => (
   </section>
 );
 
-const LatestNewsContent = ({content}) => (
-  <Col>
-    <a href="https://google.com" className="text-primary text-decoration-none">
-      <svg className="rounded img-fluid" xmlns="http://www.w3.org/2000/svg" >
-        <rect width="100%" height="100%" fill="#868e96"></rect>
-      </svg>
-      <h3>{content.Title}</h3>
-    </a>
-    <span className="text-muted">{moment(content.updated_at).fromNow()}</span>
-    <p>{content.Summary}</p>
-  </Col>
-);
-
-const LatestNews = ({featuredContent}) => (
-  <section name="latest-news">
-    <h2>Últimas noticias</h2>
-    <Row lg={4} md={2} sm={1}>
-      {featuredContent.map((content) => (
-        <LatestNewsContent key={content.id} content={content} />
-      ))}
-    </Row>
-  </section>
-);
-
-const Index = ({featuredContent}) => (
+const Index = ({ featuredContent }) => (
   <>
     <Intro />
     <Container className="mt-2 mt-md-5">

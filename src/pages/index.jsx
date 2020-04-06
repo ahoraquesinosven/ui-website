@@ -6,14 +6,17 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 
+import fetchFeaturedContent from '../data/featured-content';
+import LatestNews from '../components/index/latest-news';
+
 const IntroItem = ({ caption, message }) => (
   <>
-    <svg width="100%" height="800px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+    <svg width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
       <rect width="100%" height="100%" fill="#777" />
     </svg>
     <Carousel.Caption>
-      <h2>{ caption }</h2>
-      <p>{ message }</p>
+      <h2>{caption}</h2>
+      <p>{message}</p>
     </Carousel.Caption>
   </>
 );
@@ -61,7 +64,7 @@ const ImportantSectionColumn = ({
 };
 
 const ImportantSections = () => (
-  <section name="important-sections" className="text-center mb-2 mt-mb-5">
+  <section name="important-sections" className="text-center">
     <Row>
       <ImportantSectionColumn
         imageUrl="/images/informe-1.jpg"
@@ -85,20 +88,24 @@ const ImportantSections = () => (
   </section>
 );
 
-const LatestNews = () => (
-  <section name="latest-news">
-    TODO: Implement this `latest news` section
-  </section>
-);
-
-const Index = () => (
+const Index = ({ featuredContent }) => (
   <>
     <Intro />
     <Container className="mt-2 mt-md-5">
       <ImportantSections />
-      <LatestNews />
+      <hr className="w-50 mx-auto my-5" />
+      <LatestNews featuredContent={featuredContent} />
     </Container>
   </>
 );
 
 export default Index;
+
+export async function getServerSideProps() {
+  const featuredContent = await fetchFeaturedContent();
+  return {
+    props: {
+      featuredContent,
+    },
+  };
+}

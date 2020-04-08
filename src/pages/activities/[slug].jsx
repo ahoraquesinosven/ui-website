@@ -1,3 +1,5 @@
+import { faCalendarDay, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import Link from 'next/link';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
@@ -5,8 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
-import OptionalImage from '../../components/optional-image';
 import Markdown from '../../components/markdown-renderer';
+import OptionalImage from '../../components/optional-image';
 import fetchActivity from '../../data/activities';
 
 moment.locale('es');
@@ -33,10 +35,14 @@ const ActivityDetails = ({ activity }) => {
     <ListGroup variant="flush">
       <ListGroup.Item>
         <h5>¿Dónde?</h5>
-        <a rel="noopener noreferrer" target="_blank" href={mapUrl}>{activity.Location}</a>
+        <a rel="noopener noreferrer" target="_blank" href={mapUrl}>
+          <FontAwesomeIcon icon={faMapMarkedAlt} fixedWidth className="mr-2" />
+          {activity.Location}
+        </a>
       </ListGroup.Item>
       <ListGroup.Item>
         <h5>¿Cuándo?</h5>
+        <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
         {moment(activity.ActivityDateTime).format('LLL')}
       </ListGroup.Item>
     </ListGroup>

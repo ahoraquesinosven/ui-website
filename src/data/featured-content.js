@@ -15,7 +15,10 @@ const resultMapper = (featuredContent) => {
 
   return {
     ...featuredContent,
-    URL: `/${baseUrl}/${content.Slug}`,
+    Routing: {
+      href: `/${baseUrl}/[slug]`,
+      as: `/${baseUrl}/${content.Slug}`,
+    },
     AssociatedContent: content,
   };
 };

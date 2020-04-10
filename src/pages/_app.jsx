@@ -1,9 +1,13 @@
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
 import Link from 'next/link';
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
+
+config.autoAddCss = false;
+
 
 const Header = () => (
   <Navbar bg="dark" variant="dark" expand="md" sticky="top">

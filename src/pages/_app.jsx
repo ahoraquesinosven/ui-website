@@ -1,10 +1,15 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
+import { faInstagramSquare, faTwitterSquare, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.css';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 config.autoAddCss = false;
 
@@ -40,10 +45,34 @@ const Header = () => (
 );
 
 const Footer = () => (
-  <Container as="footer">
-    <strong>TODO</strong>
-    : Implement this footer
-  </Container>
+  <div className="text-light bg-dark text-center">
+    <Container as="footer" className="mt-4">
+      <Row>
+        <Col>
+          <a href="https://www.instagram.com/ahoraquesinosvenok/" rel="noopener noreferrer" target="_blank" className="text-light">
+            <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
+          </a>
+        </Col>
+        <Col>
+          <a href="https://twitter.com/ahoraquesinosv4" rel="noopener noreferrer" target="_blank" className="text-light">
+            <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
+          </a>
+        </Col>
+        <Col>
+          <a href="https://www.facebook.com/ahoraquesinosven/" rel="noopener noreferrer" target="_blank" className="text-light">
+            <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
+          </a>
+        </Col>
+      </Row>
+      <Row className="justify-content-center mt-3">
+        <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="text-light align-middle">
+          <FontAwesomeIcon icon={faBullhorn} size="2x" className="mr-2" />
+          Nuestra Radio Modo Glitter
+        </a>
+      </Row>
+      <div className="text-muted mt-2">Copyright 2020</div>
+    </Container>
+  </div>
 );
 
 const Application = ({ Component, pageProps }) => (

@@ -44,32 +44,43 @@ const Header = () => (
   </Navbar>
 );
 
+const FooterCol = ({
+  icon, linkUrl
+}) => (
+  <Col>
+    <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="text-light">
+      <FontAwesomeIcon icon={icon} size="2x" />
+    </a>
+  </Col>
+);
+
+
 const Footer = () => (
   <div className="text-light bg-dark text-center">
-    <Container as="footer" className="mt-4">
-      <Row>
-        <Col>
-          <a href="https://www.instagram.com/ahoraquesinosvenok/" rel="noopener noreferrer" target="_blank" className="text-light">
-            <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
-          </a>
-        </Col>
-        <Col>
-          <a href="https://twitter.com/ahoraquesinosv4" rel="noopener noreferrer" target="_blank" className="text-light">
-            <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
-          </a>
-        </Col>
-        <Col>
-          <a href="https://www.facebook.com/ahoraquesinosven/" rel="noopener noreferrer" target="_blank" className="text-light">
-            <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
-          </a>
-        </Col>
+    <Container as="footer" className="mt-3">
+      <h5 className="text-muted">
+        Observatorio de violencias de género
+        <em style={{ display: 'block' }}>Ahora que sí nos ven</em>
+      </h5>
+      <Row className="mt-2">
+        <FooterCol
+          icon={faInstagramSquare}
+          linkUrl="https://www.instagram.com/ahoraquesinosvenok/"
+        />
+        <FooterCol
+          icon={faTwitterSquare}
+          linkUrl="https://twitter.com/ahoraquesinosv4"
+        />
+        <FooterCol
+          icon={faFacebookSquare}
+          linkUrl="https://www.facebook.com/ahoraquesinosven/"
+        />
       </Row>
-      <Row className="justify-content-center mt-3">
-        <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="text-light align-middle">
-          <FontAwesomeIcon icon={faBullhorn} size="2x" className="mr-2" />
-          Nuestra Radio Modo Glitter
-        </a>
-      </Row>
+      <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="text-light">
+        <FontAwesomeIcon icon={faBullhorn} size="2x" className="mr-2" />
+        Nuestra Radio
+        <em> Modo Glitter</em>
+      </a>
       <div className="text-muted mt-2">Copyright 2020</div>
     </Container>
   </div>

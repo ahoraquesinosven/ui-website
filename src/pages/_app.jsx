@@ -45,7 +45,7 @@ const Header = () => (
 );
 
 const FooterCol = ({
-  icon, linkUrl
+  icon, linkUrl,
 }) => (
   <Col>
     <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="text-light">

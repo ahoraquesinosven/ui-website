@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
+import Carousel from 'react-bootstrap/Carousel';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import fetchCampaign from '../../data/campaigns';
@@ -49,6 +50,18 @@ const CampaignDetails = ({ campaign }) => {
   );
 };
 
+const CampaignCarousel = ({ campaign }) => (
+  <Carousel>
+    <Carousel.Item>
+      <OptionalImage image={campaign.AdditionalImages[0]} fluid rounded className="mb-3" />
+    </Carousel.Item>
+    <Carousel.Item>
+      <OptionalImage image={campaign.AdditionalImages[1]} fluid rounded className="mb-3" />
+    </Carousel.Item>
+
+  </Carousel>
+
+);
 
 const Campaign = ({ campaign }) => (
   <Container className="mt-2">
@@ -59,13 +72,16 @@ const Campaign = ({ campaign }) => (
         <CampaignDetails campaign={campaign} />
       </Col>
       <Col>
-        <OptionalImage image={campaign.MainImage} fluid rounded className="mb-3" />
-        <Markdown source={campaign.Summary} />
+        <Row>
+          <OptionalImage image={campaign.MainImage} fluid rounded className="mb-3" />
+          <Markdown source={campaign.Summary} />
+        </Row>
+        <Row>
+          <CampaignCarousel campaign={campaign} />
+        </Row>
       </Col>
     </Row>
-    <Row>
-      <p>TODO: Implement the campaigns carrousel</p>
-    </Row>
+
   </Container>
 );
 

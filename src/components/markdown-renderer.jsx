@@ -2,7 +2,7 @@ import Markdown from 'react-markdown';
 import Image from 'react-bootstrap/Image';
 
 const customRenderers = {
-  image: (props) => <Image {...props} fluid rounded />,
+  image: (props) => <Image {...props} fluid rounded className="content-image" />,
 };
 
 const CustomMarkdownRenderer = (props) => (

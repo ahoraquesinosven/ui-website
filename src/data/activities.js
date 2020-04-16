@@ -6,4 +6,10 @@ const fetchActivity = async (slug) => {
   return (result && result.length === 1) ? result[0] : null;
 };
 
-export default fetchActivity;
+const fetchActivities = async ({categoryId}) => {
+  const filters = categoryId ? `&Category.id=${categoryId}` : "";
+  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/activities?_sort=updated_at:DESC${filters}`);
+  return await response.json();
+};
+
+export {fetchActivity, fetchActivities};

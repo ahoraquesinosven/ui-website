@@ -1,5 +1,5 @@
 img.content-image {
   max-height: 50vh;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  display: block;
 }

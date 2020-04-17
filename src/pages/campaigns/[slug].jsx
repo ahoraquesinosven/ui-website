@@ -50,17 +50,15 @@ const CampaignDetails = ({ campaign }) => {
   );
 };
 
-const CampaignCarousel = ({ campaign }) => (
+
+const CampaignCarousel = ({ images }) => (
   <Carousel>
-    <Carousel.Item>
-      <OptionalImage image={campaign.AdditionalImages[0]} fluid rounded className="mb-3" />
-    </Carousel.Item>
-    <Carousel.Item>
-      <OptionalImage image={campaign.AdditionalImages[1]} fluid rounded className="mb-3" />
-    </Carousel.Item>
-
+    {images.map((image) => (
+      <Carousel.Item>
+        <OptionalImage image={image} fluid rounded className="mb-3 content-image" />
+      </Carousel.Item>
+    ))}
   </Carousel>
-
 );
 
 const Campaign = ({ campaign }) => (
@@ -72,13 +70,9 @@ const Campaign = ({ campaign }) => (
         <CampaignDetails campaign={campaign} />
       </Col>
       <Col>
-        <Row>
-          <OptionalImage image={campaign.MainImage} fluid rounded className="mb-3" />
-          <Markdown source={campaign.Summary} />
-        </Row>
-        <Row>
-          <CampaignCarousel campaign={campaign} />
-        </Row>
+        <OptionalImage image={campaign.MainImage} fluid rounded className="mb-3 content-image" />
+        <Markdown source={campaign.Summary} />
+        <CampaignCarousel images={campaign.AdditionalImages} />
       </Col>
     </Row>
 

@@ -51,15 +51,20 @@ const CampaignDetails = ({ campaign }) => {
 };
 
 
-const CampaignCarousel = ({ images }) => (
-  <Carousel>
-    {images.map((image) => (
-      <Carousel.Item>
-        <OptionalImage image={image} fluid rounded className="mb-3 content-image" />
-      </Carousel.Item>
-    ))}
-  </Carousel>
-);
+const CampaignCarousel = ({ images }) => {
+  if (images) {
+    return (
+      <Carousel>
+        {images.map((image) => (
+          <Carousel.Item>
+            <OptionalImage image={image} fluid rounded className="mb-3 content-image" />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    );
+  }
+  return null;
+};
 
 const Campaign = ({ campaign }) => (
   <Container className="mt-2">

@@ -58,7 +58,7 @@ const Activity = ({ activity }) => (
         <ActivityDetails activity={activity} />
       </Col>
       <Col>
-        <OptionalImage image={activity.MainImage} fluid rounded className="mb-3" />
+        <OptionalImage image={activity.MainImage} fluid rounded className="mb-3 content-image" />
         <Markdown source={activity.Description} />
       </Col>
     </Row>

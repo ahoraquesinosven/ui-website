@@ -56,7 +56,7 @@ const MediaPresence = ({ mediaPresence }) => (
         <MediaPresenceDetails mediaPresence={mediaPresence} />
       </Col>
       <Col>
-        <OptionalImage image={mediaPresence.MainImage} fluid rounded className="mb-3" />
+        <OptionalImage image={mediaPresence.MainImage} fluid rounded className="mb-3 content-image" />
         <Markdown source={mediaPresence.Content} />
       </Col>
     </Row>

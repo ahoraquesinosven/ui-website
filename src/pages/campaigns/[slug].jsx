@@ -22,18 +22,18 @@ const CampaignBreadcrumbs = ({ campaign }) => (
     <Link href="/campaigns" passHref>
       <Breadcrumb.Item>Campañas</Breadcrumb.Item>
     </Link>
-    <Breadcrumb.Item active>{campaign.Title}</Breadcrumb.Item>
+    <Breadcrumb.Item active>{campaign.title}</Breadcrumb.Item>
   </Breadcrumb>
 );
 
 const CampaignDetails = ({ campaign }) => {
   let listGroupResult;
-  if (campaign.LawNumber) {
+  if (campaign.lawNumber) {
     listGroupResult = (
       <ListGroup.Item>
         <h6>Número de Ley</h6>
         <FontAwesomeIcon icon={faGavel} fixedWidth className="mr-2" />
-        {campaign.LawNumber}
+        {campaign.lawNumber}
       </ListGroup.Item>
     );
   }
@@ -43,7 +43,7 @@ const CampaignDetails = ({ campaign }) => {
       <ListGroup.Item>
         <h6>Fecha de Lanzamiento</h6>
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(campaign.LaunchDate).format('LL')}
+        {moment(campaign.launchDate).format('LL')}
       </ListGroup.Item>
       {listGroupResult}
     </ListGroup>
@@ -56,7 +56,7 @@ const CampaignCarousel = ({ images }) => {
     return (
       <Carousel>
         {images.map((image) => (
-          <Carousel.Item>
+          <Carousel.Item key={image.id}>
             <OptionalImage image={image} fluid rounded className="mb-3 content-image" />
           </Carousel.Item>
         ))}
@@ -69,15 +69,16 @@ const CampaignCarousel = ({ images }) => {
 const Campaign = ({ campaign }) => (
   <Container className="mt-2">
     <CampaignBreadcrumbs campaign={campaign} />
-    <h1>{campaign.Title}</h1>
+    <h1>{campaign.title}</h1>
+    <p>{campaign.summary}</p>
     <Row>
       <Col lg={3}>
         <CampaignDetails campaign={campaign} />
       </Col>
       <Col>
-        <OptionalImage image={campaign.MainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={campaign.Summary} />
-        <CampaignCarousel images={campaign.AdditionalImages} />
+        <OptionalImage image={campaign.mainImage} fluid rounded className="mb-3 content-image" />
+        <Markdown source={campaign.content} />
+        <CampaignCarousel images={campaign.additionalImages} />
       </Col>
     </Row>
 

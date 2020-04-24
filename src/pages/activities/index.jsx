@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Badge from 'react-bootstrap/Badge';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -36,6 +37,9 @@ const Activity = ({ activity }) => (
         <h3>{activity.title}</h3>
         <Date className="text-muted" date={activity.created_at} format={(date) => date.fromNow()} />
         <OptionalImage image={activity.mainImage} fluid rounded className="mb-1" />
+        <div>
+          <Badge variant="primary">{activity.category.title}</Badge>
+        </div>
         <p className="text-dark">{activity.summary}</p>
       </a>
     </Link>

@@ -1,40 +1,33 @@
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
-import moment from 'moment';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Date from '../date';
 import OptionalImage from '../optional-image';
 
-moment.locale('es');
+const contentBaseUrls = {
+  activity: '/activities',
+  media_presence: '/media-presence',
+  report: '/reports',
+  campaign: '/campaigns',
+};
 
-const ContentUpdateTime = ({ content }) => {
-  const updateTime = moment(content.AssociatedContent.updated_at);
-
-  const updateTimeTooltip = (
-    <Tooltip>
-      {updateTime.calendar()}
-    </Tooltip>
-  );
-
-  return (
-    <OverlayTrigger placement="right" overlay={updateTimeTooltip}>
-      <span className="text-muted">{updateTime.fromNow()}</span>
-    </OverlayTrigger>
-  );
+const contentRouting = (content) => {
+  const baseUrl = contentBaseUrls[content.kind];
+  return {
+    href: `${baseUrl}/[slug]`,
+    as: `${baseUrl}/${content.slug}`,
+  };
 };
 
 const Content = ({ content }) => (
-  <>
-    <Link {...content.Routing}>
-      <a className="text-primary text-decoration-none">
-        <h3>{content.Title}</h3>
-        <ContentUpdateTime content={content} />
-        <OptionalImage image={content.Thumbnail} fluid rounded className="mb-1" />
-      </a>
-    </Link>
-    <p>{content.Summary}</p>
-  </>
+  <Link {...contentRouting(content)}>
+    <a className="text-primary text-decoration-none">
+      <h3>{content.title}</h3>
+      <Date className="text-muted" date={content.created_at} format={(date) => date.fromNow()} />
+      <OptionalImage url={content.mainImageUrl} fluid rounded className="mb-1" />
+      <p className="text-dark">{content.summary}</p>
+    </a>
+  </Link>
 );
 
 const LatestNews = ({ featuredContent }) => (
@@ -42,7 +35,7 @@ const LatestNews = ({ featuredContent }) => (
     <h2>Últimas noticias</h2>
     <Row lg={3} md={2} sm={1}>
       {featuredContent.map((content) => (
-        <Col key={content.id}>
+        <Col key={`${content.kind}-${content.id}`}>
           <Content content={content} />
         </Col>
       ))}

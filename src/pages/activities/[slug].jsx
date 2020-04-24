@@ -21,15 +21,15 @@ const ActivityBreadcrumbs = ({ activity }) => (
     <Link href="/activities" passHref>
       <Breadcrumb.Item>Actividades</Breadcrumb.Item>
     </Link>
-    <Link href={{ pathname: '/activities', query: { category: activity.Category.id } }} passHref>
-      <Breadcrumb.Item>{activity.Category.Title}</Breadcrumb.Item>
+    <Link href={{ pathname: '/activities', query: { category: activity.category.slug } }} passHref>
+      <Breadcrumb.Item>{activity.category.title}</Breadcrumb.Item>
     </Link>
-    <Breadcrumb.Item active>{activity.Title}</Breadcrumb.Item>
+    <Breadcrumb.Item active>{activity.title}</Breadcrumb.Item>
   </Breadcrumb>
 );
 
 const ActivityDetails = ({ activity }) => {
-  const encodedLocation = encodeURIComponent(activity.Location);
+  const encodedLocation = encodeURIComponent(activity.location);
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
   return (
     <ListGroup variant="flush">
@@ -37,13 +37,13 @@ const ActivityDetails = ({ activity }) => {
         <h5>¿Dónde?</h5>
         <a rel="noopener noreferrer" target="_blank" href={mapUrl}>
           <FontAwesomeIcon icon={faMapMarkedAlt} fixedWidth className="mr-2" />
-          {activity.Location}
+          {activity.location}
         </a>
       </ListGroup.Item>
       <ListGroup.Item>
         <h5>¿Cuándo?</h5>
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(activity.ActivityDateTime).format('LLL')}
+        {moment(activity.activityDateTime).format('LLL')}
       </ListGroup.Item>
     </ListGroup>
   );
@@ -52,14 +52,15 @@ const ActivityDetails = ({ activity }) => {
 const Activity = ({ activity }) => (
   <Container className="mt-2">
     <ActivityBreadcrumbs activity={activity} />
-    <h1>{activity.Title}</h1>
+    <h1>{activity.title}</h1>
+    <p>{activity.summary}</p>
     <Row>
       <Col lg={3}>
         <ActivityDetails activity={activity} />
       </Col>
       <Col>
-        <OptionalImage image={activity.MainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={activity.Description} />
+        <OptionalImage image={activity.mainImage} fluid rounded className="mb-3 content-image" />
+        <Markdown source={activity.content} />
       </Col>
     </Row>
   </Container>

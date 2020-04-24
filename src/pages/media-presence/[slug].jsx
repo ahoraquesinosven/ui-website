@@ -21,7 +21,7 @@ const MediaPresenceBreadcrumbs = ({ mediaPresence }) => (
     <Link href="/media-presence" passHref>
       <Breadcrumb.Item>En los medios</Breadcrumb.Item>
     </Link>
-    <Breadcrumb.Item active>{mediaPresence.Title}</Breadcrumb.Item>
+    <Breadcrumb.Item active>{mediaPresence.title}</Breadcrumb.Item>
   </Breadcrumb>
 );
 
@@ -30,16 +30,16 @@ const MediaPresenceDetails = ({ mediaPresence }) => (
     <ListGroup.Item>
       <h6>Fecha de Pubicación</h6>
       <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-      {moment(mediaPresence.PublicationDate).format('LL')}
+      {moment(mediaPresence.publicationDate).format('LL')}
     </ListGroup.Item>
     <ListGroup.Item>
       <h6>Medio</h6>
       <FontAwesomeIcon icon={faNewspaper} fixedWidth className="mr-2" />
-      {mediaPresence.Source}
+      {mediaPresence.source}
     </ListGroup.Item>
     <ListGroup.Item>
       <h6>Nota Original</h6>
-      <a rel="noopener noreferrer" target="_blank" href={mediaPresence.SourceLink}>
+      <a rel="noopener noreferrer" target="_blank" href={mediaPresence.sourceLink}>
         <FontAwesomeIcon icon={faExternalLinkAlt} fixedWidth className="mr-2" />
         Ir a la nota
       </a>
@@ -50,14 +50,15 @@ const MediaPresenceDetails = ({ mediaPresence }) => (
 const MediaPresence = ({ mediaPresence }) => (
   <Container className="mt-2">
     <MediaPresenceBreadcrumbs mediaPresence={mediaPresence} />
-    <h1>{mediaPresence.Title}</h1>
+    <h1>{mediaPresence.title}</h1>
+    <p>{mediaPresence.summary}</p>
     <Row>
       <Col lg={3}>
         <MediaPresenceDetails mediaPresence={mediaPresence} />
       </Col>
       <Col>
-        <OptionalImage image={mediaPresence.MainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={mediaPresence.Content} />
+        <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mb-3 content-image" />
+        <Markdown source={mediaPresence.content} />
       </Col>
     </Row>
   </Container>

@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
-import fetchCampaign from '../../data/campaigns';
+import { fetchCampaign } from '../../data/campaigns';
 
 moment.locale('es');
 

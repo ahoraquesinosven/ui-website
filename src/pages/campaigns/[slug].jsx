@@ -7,9 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
-import Carousel from 'react-bootstrap/Carousel';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
+import AdditionalImagesCarousel from '../../components/additional-images-carousel';
 import fetchCampaign from '../../data/campaigns';
 
 moment.locale('es');
@@ -65,21 +65,6 @@ const CampaignDetails = ({ campaign }) => {
 };
 
 
-const CampaignCarousel = ({ images }) => {
-  if (images) {
-    return (
-      <Carousel>
-        {images.map((image) => (
-          <Carousel.Item key={image.id}>
-            <OptionalImage image={image} fluid rounded className="mb-3 content-image" />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    );
-  }
-  return null;
-};
-
 const Campaign = ({ campaign }) => (
   <Container className="mt-2">
     <CampaignBreadcrumbs campaign={campaign} />
@@ -92,7 +77,7 @@ const Campaign = ({ campaign }) => (
       <Col>
         <OptionalImage image={campaign.mainImage} fluid rounded className="mb-3 content-image" />
         <Markdown source={campaign.content} />
-        <CampaignCarousel images={campaign.additionalImages} />
+        <AdditionalImagesCarousel images={campaign.additionalImages} />
       </Col>
     </Row>
 

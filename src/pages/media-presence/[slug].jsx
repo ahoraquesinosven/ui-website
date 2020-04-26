@@ -9,7 +9,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
-import fetchMediaPresence from '../../data/media-presence';
+import { fetchMediaPresence } from '../../data/media-presence';
 
 moment.locale('es');
 

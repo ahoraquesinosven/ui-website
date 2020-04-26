@@ -31,7 +31,7 @@ const ReportsBreadcrumb = ({ category }) => {
 };
 
 const Report = ({ report }) => (
-  <article key={report.id}>
+  <article>
     <Link href="/reports/[slug]" as={`/reports/${report.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{report.title}</h3>

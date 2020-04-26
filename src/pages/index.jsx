@@ -9,12 +9,10 @@ import Link from 'next/link';
 import fetchFeaturedContent from '../data/featured-content';
 import LatestNews from '../components/index/latest-news';
 
-const IntroItem = ({ caption, message }) => (
+const IntroItem = ({ caption, message, imageUrl }) => (
   <>
-    <svg width="100%" height="600px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-      <rect width="100%" height="100%" fill="#777" />
-    </svg>
-    <Carousel.Caption>
+    <img src={imageUrl} className="d-block w-100 " alt={caption} />
+    <Carousel.Caption style={{ backgroundColor: 'rgba(0.25,0.25,0.25,0.4)' }}>
       <h2>{caption}</h2>
       <p>{message}</p>
     </Carousel.Caption>
@@ -24,15 +22,15 @@ const IntroItem = ({ caption, message }) => (
 const Intro = () => (
   <Carousel>
     <Carousel.Item>
-      <IntroItem caption="First image" message="TODO: Complete with first image" />
+      <IntroItem caption="Registro de Femicidios" message="Presentando el resumen 2015 a 2019 del registro de femicidios" imageUrl="/images/main-image1.jpg" />
     </Carousel.Item>
 
     <Carousel.Item>
-      <IntroItem caption="Second image" message="TODO: Complete with second image" />
+      <IntroItem caption="Aborto Legal Seguro y Gratuito" message="Pañuelazo frente al Congreso en 2020" imageUrl="/images/main-image2.jpg" />
     </Carousel.Item>
 
     <Carousel.Item>
-      <IntroItem caption="Third image" message="TODO: Complete with third image" />
+      <IntroItem caption="Ni Una Menos" message="Frente al Congreso 2020" imageUrl="/images/main-image3.jpg" />
     </Carousel.Item>
   </Carousel>
 );
@@ -90,8 +88,9 @@ const ImportantSections = () => (
 
 const Index = ({ featuredContent }) => (
   <>
-    <Intro />
-    <Container className="mt-2 mt-md-5">
+
+    <Container className="">
+      <Intro />
       <ImportantSections />
       <hr className="w-50 mx-auto my-5" />
       <LatestNews featuredContent={featuredContent} />

@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import OptionalImage from "./optional-image";
+import OptionalImage from './optional-image';
 
 const AdditionalImagesCarousel = ({ images }) => {
   if (images) {

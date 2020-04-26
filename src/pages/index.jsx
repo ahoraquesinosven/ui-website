@@ -70,7 +70,7 @@ const ImportantSections = () => (
         imageUrl="/images/informe-1.jpg"
         title="Registro de Femicidios"
         description="Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna."
-        linkUrl="/reports"
+        linkUrl="reports?category=registro-femicidios"
       />
       <ImportantSectionColumn
         imageUrl="/images/iconos-01.jpg"

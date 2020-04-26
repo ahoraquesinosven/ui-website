@@ -62,7 +62,7 @@ const ImportantSectionColumn = ({
 };
 
 const ImportantSections = () => (
-  <section name="important-sections" className="text-center">
+  <section name="important-sections" className="text-center mt-2 mt-md-5">
     <Row>
       <ImportantSectionColumn
         imageUrl="/images/informe-1.jpg"

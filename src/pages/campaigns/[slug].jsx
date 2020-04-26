@@ -31,7 +31,7 @@ const CampaignDetails = ({ campaign }) => {
   if (campaign.lawNumber) {
     listGroupResult = (
       <ListGroup.Item>
-        <h6>Número de Ley</h6>
+        <h5>Ley</h5>
         <FontAwesomeIcon icon={faGavel} fixedWidth className="mr-2" />
         {campaign.lawNumber}
       </ListGroup.Item>
@@ -41,7 +41,7 @@ const CampaignDetails = ({ campaign }) => {
   return (
     <ListGroup variant="flush">
       <ListGroup.Item>
-        <h6>Fecha de Lanzamiento</h6>
+        <h5>Lanzamiento</h5>
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
         {moment(campaign.launchDate).format('LL')}
       </ListGroup.Item>

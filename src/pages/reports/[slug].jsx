@@ -1,4 +1,4 @@
-import { faCalendarDay, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import Link from 'next/link';
@@ -9,11 +9,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
-import { fetchActivity } from '../../data/activities';
+import { fetchReport } from '../../data/reports';
 
 moment.locale('es');
 
-const ActivityBreadcrumbs = ({ report }) => (
+const ReportBreadcrumbs = ({ report }) => (
   <Breadcrumb>
     <Link href="/" passHref>
       <Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -28,52 +28,47 @@ const ActivityBreadcrumbs = ({ report }) => (
   </Breadcrumb>
 );
 
-const ActivityDetails = ({ activity }) => {
-  const encodedLocation = encodeURIComponent(activity.location);
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
-  return (
-    <ListGroup variant="flush">
-      <ListGroup.Item>
-        <h5>¿Dónde?</h5>
-        <a rel="noopener noreferrer" target="_blank" href={mapUrl}>
-          <FontAwesomeIcon icon={faMapMarkedAlt} fixedWidth className="mr-2" />
-          {activity.location}
-        </a>
-      </ListGroup.Item>
-      <ListGroup.Item>
-        <h5>¿Cuándo?</h5>
-        <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(activity.activityDateTime).format('LLL')}
-      </ListGroup.Item>
-    </ListGroup>
-  );
-};
+const ReportDetails = ({ report }) => (
+  <ListGroup variant="flush">
+    <ListGroup.Item>
+      <h5>Inicio del Informe</h5>
+      <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
+      {moment(report.fromDate).format('LLL')}
+    </ListGroup.Item>
+    <ListGroup.Item>
+      <h5>Fin del Informe</h5>
+      <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
+      {moment(report.toDate).format('LLL')}
+    </ListGroup.Item>
+  </ListGroup>
+);
 
-const Activity = ({ activity }) => (
+
+const Report = ({ report }) => (
   <Container className="mt-2">
-    <ActivityBreadcrumbs activity={activity} />
-    <h1>{activity.title}</h1>
-    <p>{activity.summary}</p>
+    <ReportBreadcrumbs report={report} />
+    <h1>{report.title}</h1>
+    <p>{report.summary}</p>
     <Row>
       <Col lg={3}>
-        <ActivityDetails activity={activity} />
+        <ReportDetails report={report} />
       </Col>
       <Col>
-        <OptionalImage image={activity.mainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={activity.content} />
+        <OptionalImage image={report.mainImage} fluid rounded className="mb-3 content-image" />
+        <Markdown source={report.content} />
       </Col>
     </Row>
   </Container>
 );
 
-export default Activity;
+export default Report;
 
 export async function getServerSideProps({ params }) {
-  const activity = await fetchActivity(params.slug);
+  const report = await fetchReport(params.slug);
 
   return {
     props: {
-      activity,
+      report,
     },
   };
 }

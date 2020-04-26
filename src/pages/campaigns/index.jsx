@@ -20,7 +20,7 @@ const CampaignsBreadcrumb = () => (
 
 
 const Campaign = ({ campaign }) => (
-  <article key={campaign.id}>
+  <article>
     <Link href="/campaigns/[slug]" as={`/campaigns/${campaign.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{campaign.title}</h3>

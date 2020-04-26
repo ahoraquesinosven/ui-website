@@ -20,7 +20,7 @@ const MediaPresencesBreadcrumb = () => (
 
 
 const MediaPresence = ({ mediaPresence }) => (
-  <article key={mediaPresence.id}>
+  <article>
     <Link href="/media-presence/[slug]" as={`/media-presence/${mediaPresence.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{mediaPresence.title}</h3>

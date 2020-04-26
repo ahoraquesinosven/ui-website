@@ -28,17 +28,17 @@ const MediaPresenceBreadcrumbs = ({ mediaPresence }) => (
 const MediaPresenceDetails = ({ mediaPresence }) => (
   <ListGroup variant="flush">
     <ListGroup.Item>
-      <h6>Fecha de Pubicación</h6>
+      <h5>Pubicación</h5>
       <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
       {moment(mediaPresence.publicationDate).format('LL')}
     </ListGroup.Item>
     <ListGroup.Item>
-      <h6>Medio</h6>
+      <h5>Medio</h5>
       <FontAwesomeIcon icon={faNewspaper} fixedWidth className="mr-2" />
       {mediaPresence.source}
     </ListGroup.Item>
     <ListGroup.Item>
-      <h6>Nota Original</h6>
+      <h5>Nota Original</h5>
       <a rel="noopener noreferrer" target="_blank" href={mediaPresence.sourceLink}>
         <FontAwesomeIcon icon={faExternalLinkAlt} fixedWidth className="mr-2" />
         Ir a la nota

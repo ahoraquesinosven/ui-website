@@ -1,4 +1,4 @@
-import { faCalendarDay, faGavel } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDay, faGavel, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import Link from 'next/link';
@@ -27,13 +27,26 @@ const CampaignBreadcrumbs = ({ campaign }) => (
 );
 
 const CampaignDetails = ({ campaign }) => {
-  let listGroupResult;
+  let listGroupResultForLaw;
+  let listGroupResultForAttachment;
   if (campaign.lawNumber) {
-    listGroupResult = (
+    listGroupResultForLaw = (
       <ListGroup.Item>
         <h5>Ley</h5>
         <FontAwesomeIcon icon={faGavel} fixedWidth className="mr-2" />
         {campaign.lawNumber}
+      </ListGroup.Item>
+    );
+  }
+  if (campaign.attachment) {
+    listGroupResultForAttachment = (
+      <ListGroup.Item>
+        <h5>Descargar Archivo</h5>
+        <a rel="noopener noreferrer" target="_blank" href={campaign.attachment.url}>
+          <FontAwesomeIcon icon={faDownload} fixedWidth className="mr-2" />
+          {campaign.attachment.name}
+        </a>
+
       </ListGroup.Item>
     );
   }
@@ -45,7 +58,8 @@ const CampaignDetails = ({ campaign }) => {
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
         {moment(campaign.launchDate).format('LL')}
       </ListGroup.Item>
-      {listGroupResult}
+      {listGroupResultForLaw}
+      {listGroupResultForAttachment}
     </ListGroup>
   );
 };

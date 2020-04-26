@@ -27,21 +27,21 @@ const MemberSocialLinks = ({ member }) => {
   let linkedInLink;
   if (member.twitter) {
     twitterLink = (
-      <Card.Link href={member.twitter}>
+      <Card.Link href={member.twitter} rel="noopener noreferrer" target="_blank">
         <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
       </Card.Link>
     );
   }
   if (member.instagram) {
     instagramLink = (
-      <Card.Link href={member.instagram}>
+      <Card.Link href={member.instagram} rel="noopener noreferrer" target="_blank">
         <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
       </Card.Link>
     );
   }
   if (member.linkedIn) {
     linkedInLink = (
-      <Card.Link href={member.linkedIn}>
+      <Card.Link href={member.linkedIn} rel="noopener noreferrer" target="_blank">
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </Card.Link>
     );

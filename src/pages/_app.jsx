@@ -24,6 +24,9 @@ const Header = () => (
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Nav>
+          <Link href="/reports?category=registro-femicidios" passHref>
+            <Nav.Link>Femicidios</Nav.Link>
+          </Link>
           <Link href="/reports" passHref>
             <Nav.Link>Informes</Nav.Link>
           </Link>

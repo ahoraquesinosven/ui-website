@@ -5,35 +5,28 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import fetchHomeImages from '../data/home-images';
 
 import fetchFeaturedContent from '../data/featured-content';
 import LatestNews from '../components/index/latest-news';
 
-const IntroItem = ({ caption, message, imageUrl }) => (
-  <>
-    <img src={imageUrl} className="d-block w-100 " alt={caption} />
-    <Carousel.Caption style={{ backgroundColor: 'rgba(0.25,0.25,0.25,0.4)' }}>
-      <h2>{caption}</h2>
-      <p>{message}</p>
-    </Carousel.Caption>
-  </>
-);
 
-const Intro = () => (
+const Intro = ({ homeImages }) => (
   <Carousel>
-    <Carousel.Item>
-      <IntroItem caption="Registro de Femicidios" message="Presentando el resumen 2015 a 2019 del registro de femicidios" imageUrl="/images/main-image1.jpg" />
-    </Carousel.Item>
-
-    <Carousel.Item>
-      <IntroItem caption="Aborto Legal Seguro y Gratuito" message="Pañuelazo frente al Congreso en 2020" imageUrl="/images/main-image2.jpg" />
-    </Carousel.Item>
-
-    <Carousel.Item>
-      <IntroItem caption="Ni Una Menos" message="Frente al Congreso 2020" imageUrl="/images/main-image3.jpg" />
-    </Carousel.Item>
+    {homeImages.map((home) => (
+      <Carousel.Item key={home.id}>
+        <Link href={home.URL} passHref>
+          <img src={home.mainImage.url} className="d-block w-100 " alt={home.mainImageTitle} />
+        </Link>
+        <Carousel.Caption style={{ backgroundColor: 'rgba(0.25,0.25,0.25,0.4)' }}>
+          <h2>{home.mainImageTitle}</h2>
+          <p>{home.mainImageSubTitle}</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    ))}
   </Carousel>
 );
+
 
 const ImportantSectionColumn = ({
   imageUrl, title, description, linkUrl,
@@ -86,11 +79,11 @@ const ImportantSections = () => (
   </section>
 );
 
-const Index = ({ featuredContent }) => (
+const Index = ({ featuredContent, homeImages }) => (
   <>
 
     <Container className="">
-      <Intro />
+      <Intro homeImages={homeImages} />
       <ImportantSections />
       <hr className="w-50 mx-auto my-5" />
       <LatestNews featuredContent={featuredContent} />
@@ -102,9 +95,11 @@ export default Index;
 
 export async function getServerSideProps() {
   const featuredContent = await fetchFeaturedContent();
+  const homeImages = await fetchHomeImages();
   return {
     props: {
       featuredContent,
+      homeImages,
     },
   };
 }

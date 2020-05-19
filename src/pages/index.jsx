@@ -96,7 +96,6 @@ export default Index;
 export async function getServerSideProps() {
   const featuredContent = await fetchFeaturedContent();
   const homeImages = await fetchHomeImages();
-  console.log(homeImages);
   return {
     props: {
       featuredContent,

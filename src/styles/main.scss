@@ -1,0 +1,14 @@
+$primary: #90278e;
+$secondary: #ec268f;
+$success: #1ded67;
+$info: #2d97d3;
+$warning: #e5e523;
+$danger: #f4a414;
+
+@import 'bootstrap/scss/bootstrap';
+
+img.content-image {
+  max-height: 50vh;
+  margin: auto;
+  display: block;
+}

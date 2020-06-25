@@ -8,7 +8,7 @@ const fetchActivity = async (slug) => {
 
 const fetchActivities = async ({ category }) => {
   const filters = category ? `&category.slug=${category}` : '';
-  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/activities?_sort=updated_at:DESC${filters}`);
+  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/activities?_sort=dateTime:DESC${filters}`);
   return response.json();
 };
 

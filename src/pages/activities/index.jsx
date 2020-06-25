@@ -35,7 +35,7 @@ const Activity = ({ activity }) => (
     <Link href="/activities/[slug]" as={`/activities/${activity.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{activity.title}</h3>
-        <Date className="text-muted" date={activity.created_at} format={(date) => date.fromNow()} />
+        <Date className="text-muted" date={activity.dateTime} format={(date) => date.fromNow()} />
         <OptionalImage image={activity.mainImage} fluid rounded className="mb-1" />
         <div>
           <Badge variant="primary">{activity.category.title}</Badge>

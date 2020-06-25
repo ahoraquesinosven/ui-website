@@ -43,7 +43,7 @@ const ActivityDetails = ({ activity }) => {
       <ListGroup.Item>
         <h5>¿Cuándo?</h5>
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(activity.activityDateTime).format('LLL')}
+        {moment(activity.dateTime).format('LLL')}
       </ListGroup.Item>
     </ListGroup>
   );

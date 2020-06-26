@@ -24,7 +24,7 @@ const MediaPresence = ({ mediaPresence }) => (
     <Link href="/media-presence/[slug]" as={`/media-presence/${mediaPresence.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{mediaPresence.title}</h3>
-        <Date className="text-muted" date={mediaPresence.created_at} format={(date) => date.fromNow()} />
+        <Date className="text-muted" date={mediaPresence.publicationDate} format={(date) => date.fromNow()} />
         <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mb-1" />
         <p className="text-dark">{mediaPresence.summary}</p>
       </a>

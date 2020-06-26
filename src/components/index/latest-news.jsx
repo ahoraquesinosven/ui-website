@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Badge from 'react-bootstrap/Badge';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Date from '../date';
@@ -19,16 +20,31 @@ const contentRouting = (content) => {
   };
 };
 
-const Content = ({ content }) => (
-  <Link {...contentRouting(content)}>
-    <a className="text-primary text-decoration-none">
-      <h3>{content.title}</h3>
-      <Date className="text-muted" date={content.created_at} format={(date) => date.fromNow()} />
-      <OptionalImage url={content.mainImageUrl} fluid rounded className="mb-1" />
-      <p className="text-dark">{content.summary}</p>
-    </a>
-  </Link>
-);
+const contentKindTranslation = {
+  activity: 'actividad',
+  media_presence: 'en los medios',
+  report: 'informe',
+  campaign: 'campaña',
+};
+
+const Content = ({ content }) => {
+  const badge = contentKindTranslation[content.kind];
+
+  return (
+    <Link {...contentRouting(content)}>
+      <a className="text-primary text-decoration-none">
+        <h3>{content.title}</h3>
+        <Date className="text-muted" date={content.created_at} format={(date) => date.fromNow()} />
+        <OptionalImage url={content.mainImageUrl} fluid rounded className="mb-1" />
+        <div>
+          <Badge variant="primary">{badge}</Badge>
+        </div>
+        <p className="text-dark">{content.summary}</p>
+      </a>
+    </Link>
+  );
+};
+
 
 const LatestNews = ({ featuredContent }) => (
   <section name="latest-news">

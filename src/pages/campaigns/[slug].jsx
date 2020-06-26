@@ -69,7 +69,6 @@ const Campaign = ({ campaign }) => (
   <Container className="mt-2">
     <CampaignBreadcrumbs campaign={campaign} />
     <h1>{campaign.title}</h1>
-    <p>{campaign.summary}</p>
     <Row>
       <Col lg={3}>
         <CampaignDetails campaign={campaign} />

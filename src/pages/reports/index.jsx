@@ -35,7 +35,7 @@ const Report = ({ report }) => (
     <Link href="/reports/[slug]" as={`/reports/${report.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{report.title}</h3>
-        <Date className="text-muted" date={report.created_at} format={(date) => date.fromNow()} />
+        <Date className="text-muted" date={report.toDate} format={(date) => date.fromNow()} />
         <OptionalImage image={report.mainImage} fluid rounded className="mb-1" />
         <div>
           <Badge variant="primary">{report.category.title}</Badge>

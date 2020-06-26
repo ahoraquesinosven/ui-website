@@ -28,7 +28,7 @@ const MediaPresenceBreadcrumbs = ({ mediaPresence }) => (
 const MediaPresenceDetails = ({ mediaPresence }) => (
   <ListGroup variant="flush">
     <ListGroup.Item>
-      <h5>Pubicación</h5>
+      <h5>Publicación</h5>
       <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
       {moment(mediaPresence.publicationDate).format('LL')}
     </ListGroup.Item>
@@ -51,7 +51,6 @@ const MediaPresence = ({ mediaPresence }) => (
   <Container className="mt-2">
     <MediaPresenceBreadcrumbs mediaPresence={mediaPresence} />
     <h1>{mediaPresence.title}</h1>
-    <p>{mediaPresence.summary}</p>
     <Row>
       <Col lg={3}>
         <MediaPresenceDetails mediaPresence={mediaPresence} />

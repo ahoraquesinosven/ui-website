@@ -7,7 +7,7 @@ const fetchMediaPresence = async (slug) => {
 };
 
 const fetchMediaPresences = async () => {
-  const response = await fetch('https://api-website-veg6bn7zeq-uc.a.run.app/media-presences?_sort=updated_at:DESC');
+  const response = await fetch('https://api-website-veg6bn7zeq-uc.a.run.app/media-presences?_sort=publicationDate:DESC');
   return response.json();
 };
 export { fetchMediaPresence, fetchMediaPresences };

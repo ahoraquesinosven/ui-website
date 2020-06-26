@@ -24,7 +24,7 @@ const Campaign = ({ campaign }) => (
     <Link href="/campaigns/[slug]" as={`/campaigns/${campaign.slug}`}>
       <a className="text-primary text-decoration-none">
         <h3>{campaign.title}</h3>
-        <Date className="text-muted" date={campaign.created_at} format={(date) => date.fromNow()} />
+        <Date className="text-muted" date={campaign.launchDate} format={(date) => date.fromNow()} />
         <OptionalImage image={campaign.mainImage} fluid rounded className="mb-1" />
         <p className="text-dark">{campaign.summary}</p>
       </a>

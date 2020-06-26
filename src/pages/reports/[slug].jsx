@@ -59,12 +59,12 @@ const ReportDetails = ({ report }) => {
       <ListGroup.Item>
         <h5>Inicio del Informe</h5>
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(report.fromDate).format('LLL')}
+        {moment(report.fromDate).format('LL')}
       </ListGroup.Item>
       <ListGroup.Item>
         <h5>Fin del Informe</h5>
         <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(report.toDate).format('LLL')}
+        {moment(report.toDate).format('LL')}
       </ListGroup.Item>
       {listGroupResultForLaw}
       {listGroupResultForAttachment}
@@ -76,7 +76,6 @@ const Report = ({ report }) => (
   <Container className="mt-2">
     <ReportBreadcrumbs report={report} />
     <h1>{report.title}</h1>
-    <p>{report.summary}</p>
     <Row>
       <Col lg={3}>
         <ReportDetails report={report} />

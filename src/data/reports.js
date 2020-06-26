@@ -8,7 +8,7 @@ const fetchReport = async (slug) => {
 
 const fetchReports = async ({ category }) => {
   const filters = category ? `&category.slug=${category}` : '';
-  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/reports?_sort=updated_at:DESC${filters}`);
+  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/reports?_sort=toDate:DESC${filters}`);
   return response.json();
 };
 

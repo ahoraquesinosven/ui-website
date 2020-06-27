@@ -31,7 +31,7 @@ const Content = ({ content }) => {
   const badge = contentKindTranslation[content.kind];
   let cardImage = null;
   if (content.mainImageUrl) {
-    cardImage = <Card.Img variant="top" src={content.mainImageUrl} fluid rounded className="mb-1" width="400" height="250" />;
+    cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" width="400" height="250" />;
   }
   return (
     <Link {...contentRouting(content)}>
@@ -47,8 +47,8 @@ const Content = ({ content }) => {
                 <Date className="text-muted" date={content.mainDate} format={(date) => date.fromNow()} />
               </Badge>
             </p>
-            <Card.Text>
-              <p className="text-dark">{content.summary}</p>
+            <Card.Text className="text-dark">
+              {content.summary}
             </Card.Text>
           </Card.Body>
         </Card>

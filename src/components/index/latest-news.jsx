@@ -34,7 +34,7 @@ const Content = ({ content }) => {
     <Link {...contentRouting(content)}>
       <a className="text-primary text-decoration-none">
         <h3>{content.title}</h3>
-        <Date className="text-muted" date={content.created_at} format={(date) => date.fromNow()} />
+        <Date className="text-muted" date={content.mainDate} format={(date) => date.fromNow()} />
         <OptionalImage url={content.mainImageUrl} fluid rounded className="mb-1" />
         <div>
           <Badge variant="primary">{badge}</Badge>

@@ -7,7 +7,7 @@ const fetchCampaign = async (slug) => {
 };
 
 const fetchCampaigns = async () => {
-  const response = await fetch('https://api-website-veg6bn7zeq-uc.a.run.app/campaigns?_sort=updated_at:DESC');
+  const response = await fetch('https://api-website-veg6bn7zeq-uc.a.run.app/campaigns?_sort=launchDate:DESC');
   return response.json();
 };
 

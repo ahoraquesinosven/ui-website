@@ -6,9 +6,15 @@ const fetchReport = async (slug) => {
   return (result && result.length === 1) ? result[0] : null;
 };
 
-const fetchReports = async ({ category }) => {
-  const filters = category ? `&category.slug=${category}` : '';
-  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/reports?_sort=toDate:DESC${filters}`);
+const fetchReports = async ({ category, fromDate }) => {
+  const parameters = ['_sort=toDate:DESC'];
+  if (category) {
+    parameters.push(`category.slug=${category}`);
+  }
+  if (fromDate) {
+    parameters.push(`toDate_gte=${fromDate}`);
+  }
+  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/reports?${parameters.join('&')}`);
   return response.json();
 };
 
@@ -18,13 +24,6 @@ const fetchReportCategory = async (slug) => {
   return (result && result.length === 1) ? result[0] : null;
 };
 
-const fetchReportsByCategoryAndDate = async ({ category, date }) => {
-  const filterCat = category ? `&category.slug=${category}` : '';
-  const filterDate = date ? `&toDate_gte=${date}` : '';
-  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/reports?_sort=toDate:DESC${filterCat}${filterDate}`);
-  return response.json();
-};
-
 export {
-  fetchReport, fetchReportCategory, fetchReports, fetchReportsByCategoryAndDate
+  fetchReport, fetchReportCategory, fetchReports,
 };

@@ -31,12 +31,12 @@ const Content = ({ content }) => {
   const badge = contentKindTranslation[content.kind];
   let cardImage = null;
   if (content.mainImageUrl) {
-    cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" width="400" height="250" />;
+    cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" />;
   }
   return (
     <Link {...contentRouting(content)}>
       <a className="text-primary text-decoration-none">
-        <Card className="mb-4  shadow p-3 mb-5 bg-white rounded">
+        <Card className="mb-4  shadow p-3 mb-5 bg-white rounded vh-100">
           {cardImage}
           <Card.Body>
             <Card.Title className="text-uppercase">{content.title}</Card.Title>

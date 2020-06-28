@@ -4,6 +4,7 @@ $success: #1ded67;
 $info: #2d97d3;
 $warning: #e5e523;
 $danger: #f4a414;
+$enable-responsive-font-sizes: true;
 
 @import 'bootstrap/scss/bootstrap';
 
@@ -11,4 +12,28 @@ img.content-image {
   max-height: 50vh;
   margin: auto;
   display: block;
+}
+
+.intro-carousel {
+  background-color: #330a5c;
+
+  .carousel-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 0;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    font-size: 150%;
+  }
+
+  img {
+    filter: grayscale(100%) opacity(20%);
+    max-height: 80vh;
+    min-height: 40vh;
+    object-fit: cover;
+    object-position: 0 100%;
+  }
 }

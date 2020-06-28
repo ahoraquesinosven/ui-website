@@ -12,14 +12,14 @@ import LatestNews from '../components/index/latest-news';
 
 
 const Intro = ({ homeImages }) => (
-  <Carousel>
+  <Carousel className="intro-carousel">
     {homeImages.map((home) => (
       <Carousel.Item key={home.id}>
         <Link href={home.URL} passHref>
           <img src={home.mainImage.url} className="d-block w-100 " alt={home.mainImageTitle} />
         </Link>
-        <Carousel.Caption style={{ backgroundColor: 'rgba(0.25,0.25,0.25,0.4)' }}>
-          <h2>{home.mainImageTitle}</h2>
+        <Carousel.Caption>
+          <h2 className="display-1">{home.mainImageTitle}</h2>
           <p>{home.mainImageSubTitle}</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -81,9 +81,8 @@ const ImportantSections = () => (
 
 const Index = ({ featuredContent, homeImages }) => (
   <>
-
+    <Intro homeImages={homeImages} />
     <Container className="">
-      <Intro homeImages={homeImages} />
       <ImportantSections />
       <hr className="w-50 mx-auto my-5" />
       <LatestNews featuredContent={featuredContent} />

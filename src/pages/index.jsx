@@ -60,7 +60,7 @@ const ImportantSections = () => (
       <ImportantSectionColumn
         imageUrl="/images/informe-1.jpg"
         title="Femicidios en 2020"
-        description="Registro de femicidios durante el año actual"
+        description="Registro de femicidios durante el año actual,elaboradas a partir del análisis de medios gráficos y digitales de todo el país."
         linkUrl="reports?category=registro-femicidios&fromDate=2020-01-01"
       />
       <ImportantSectionColumn
@@ -72,7 +72,7 @@ const ImportantSections = () => (
       <ImportantSectionColumn
         imageUrl="/images/radio-1.jpg"
         title="Escuchanos"
-        description="Modo Glitter....nuestra radio.....asdasdasdasdsadasd."
+        description="Modo Glitter es nuestro programa de radio. Todos los sábados 16hs en FM Tribu 88.7"
         linkUrl="https://www.instagram.com/modoglitter/"
       />
     </Row>

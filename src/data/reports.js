@@ -18,4 +18,13 @@ const fetchReportCategory = async (slug) => {
   return (result && result.length === 1) ? result[0] : null;
 };
 
-export { fetchReport, fetchReportCategory, fetchReports };
+const fetchReportsByCategoryAndDate = async ({ category, date }) => {
+  const filterCat = category ? `&category.slug=${category}` : '';
+  const filterDate = date ? `&toDate_gte=${date}` : '';
+  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/reports?_sort=toDate:DESC${filterCat}${filterDate}`);
+  return response.json();
+};
+
+export {
+  fetchReport, fetchReportCategory, fetchReports, fetchReportsByCategoryAndDate
+};

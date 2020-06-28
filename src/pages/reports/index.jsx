@@ -48,7 +48,7 @@ export async function getServerSideProps({ query }) {
   const category = await fetchReportCategory(query.category);
   const reports = await fetchReports({
     category: category ? category.slug : null,
-    fromDate: query.date,
+    fromDate: query.fromDate,
   });
   return {
     props: {

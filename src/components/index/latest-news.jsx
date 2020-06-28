@@ -36,7 +36,7 @@ const Content = ({ content }) => {
   return (
     <Link {...contentRouting(content)}>
       <a className="text-primary text-decoration-none">
-        <Card className="mb-4  shadow p-3 mb-5 bg-white rounded">
+        <Card className="shadow p-3 bg-white rounded" style={{ height: '100%' }}>
           {cardImage}
           <Card.Body>
             <Card.Title className="text-uppercase">{content.title}</Card.Title>
@@ -63,7 +63,7 @@ const LatestNews = ({ featuredContent }) => (
     <h2>Últimas noticias</h2>
     <Row lg={3} md={2} sm={1}>
       {featuredContent.map((content) => (
-        <Col key={`${content.kind}-${content.id}`}>
+        <Col key={`${content.kind}-${content.id}`} className="mb-5">
 
           <Content content={content} />
         </Col>

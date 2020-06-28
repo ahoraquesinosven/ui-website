@@ -36,7 +36,7 @@ const Content = ({ content }) => {
   return (
     <Link {...contentRouting(content)}>
       <a className="text-primary text-decoration-none">
-        <Card className="mb-4  shadow p-3 mb-5 bg-white rounded vh-100">
+        <Card className="mb-4  shadow p-3 mb-5 bg-white rounded">
           {cardImage}
           <Card.Body>
             <Card.Title className="text-uppercase">{content.title}</Card.Title>

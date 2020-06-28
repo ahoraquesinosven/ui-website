@@ -36,7 +36,7 @@ const Activities = ({ activities, category }) => (
     <Row lg={3} md={2} sm={1}>
       {activities.map((activity) => (
         <Col key={activity.id} className="mb-5">
-          <CardForList content={activity} kind="activity" mainDate={activity.dateTime} />
+          <CardForList content={activity} kind="activity" mainDate={activity.dateTime} badge={activity.category.title} />
         </Col>
       ))}
     </Row>

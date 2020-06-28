@@ -17,6 +17,11 @@ img.content-image {
 .intro-carousel {
   background-color: #330a5c;
 
+  .carousel-control-next,
+  .carousel-control-prev {
+      filter: none;
+  }
+
   .carousel-caption {
     display: flex;
     align-items: center;
@@ -36,6 +41,7 @@ img.content-image {
     object-fit: cover;
     object-position: 0 100%;
   }
+
 }
 
 .important-section-icon {

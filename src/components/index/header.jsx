@@ -4,13 +4,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 
 const Header = () => (
-  <Navbar bg="dark" variant="dark" expand="md" sticky="top">
-    <Container>
+  <Navbar bg="light" expand="md" sticky="top" className="shadow">
+    <Container fluid>
       <Link href="/" passHref>
-        <Navbar.Brand>Observatorio</Navbar.Brand>
+        <Navbar.Brand>
+          <img src="./images/AQSNV-logo.jpg" height="90px" />
+        </Navbar.Brand>
       </Link>
       <Navbar.Toggle />
-      <Navbar.Collapse>
+      <Navbar.Collapse className="justify-content-end">
         <Nav>
           <Link href="/reports?category=registro-femicidios" passHref>
             <Nav.Link>Femicidios</Nav.Link>

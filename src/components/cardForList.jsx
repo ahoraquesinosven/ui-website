@@ -49,7 +49,7 @@ const CardForList = ({ content, kind, mainDate, isHome }) => {
   if (content.mainImageUrl) {
     cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" />;
   } else {
-    cardImage = <Card.Img variant="top" src={content.image.url} className="mb-1 fluid rounded" />;
+    cardImage = <Card.Img variant="top" src={content.mainImage.url} className="mb-1 fluid rounded" />;
   }
 
   return (

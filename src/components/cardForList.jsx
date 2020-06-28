@@ -19,32 +19,9 @@ const contentRouting = (content, kind) => {
 };
 
 
-const contentKindTranslation = {
-  activity: 'Activity',
-  media_presence: 'En los medios',
-  report: 'Informe',
-  campaign: 'Campaña',
-};
-
-const categoryByKind = {
-  activity: 'category',
-  media_presence: null,
-  report: 'category',
-  campaign: null,
-};
-
-const GetBadge = ({ content, kind, isHome }) => {
-  let badge = null;
-  if (isHome) {
-    badge = contentKindTranslation[kind];
-  } else if (categoryByKind[kind]) {
-    badge = content.category.title;
-  }
-  return <Badge variant="primary">{badge}</Badge>;
-};
-
-const CardForList = ({ content, kind, mainDate, isHome }) => {
-
+const CardForList = ({
+  content, kind, mainDate, badge,
+}) => {
   let cardImage = null;
   if (content.mainImageUrl) {
     cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" />;
@@ -60,7 +37,7 @@ const CardForList = ({ content, kind, mainDate, isHome }) => {
           <Card.Body>
             <Card.Title className="text-uppercase">{content.title}</Card.Title>
             <p>
-              <GetBadge content={content} kind={kind} isHome={isHome} />
+              {badge}
               &nbsp;|
               <Badge>
                 <Date className="text-muted" date={mainDate} format={(date) => date.fromNow()} />

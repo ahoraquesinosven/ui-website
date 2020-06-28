@@ -59,15 +59,15 @@ const ImportantSections = () => (
     <Row>
       <ImportantSectionColumn
         imageUrl="/images/informe-1.jpg"
-        title="Registro de Femicidios"
-        description="Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna."
-        linkUrl="reports?category=registro-femicidios"
+        title="Femicidios en 2020"
+        description="Registro de femicidios durante el año actual"
+        linkUrl="reports?category=registro-femicidios&fromDate=2020-01-01"
       />
       <ImportantSectionColumn
         imageUrl="/images/iconos-01.jpg"
-        title="Ultima Campaña"
-        description="Morbi leo risus, porta ac consectetur ac, vestibulum. Praesent commodo cursus magna."
-        linkUrl="/campaigns"
+        title="Recursos"
+        description="Descarga distintas herramientas para realizar actividades y talleres relacionados con género"
+        linkUrl="reports?category=recursos"
       />
       <ImportantSectionColumn
         imageUrl="/images/radio-1.jpg"

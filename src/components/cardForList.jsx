@@ -37,8 +37,7 @@ const CardForList = ({
           <Card.Body>
             <Card.Title className="text-uppercase">{content.title}</Card.Title>
             <p>
-              {badge}
-              &nbsp;|
+              <Badge variant="primary">{badge}</Badge>
               <Badge>
                 <Date className="text-muted" date={mainDate} format={(date) => date.fromNow()} />
               </Badge>

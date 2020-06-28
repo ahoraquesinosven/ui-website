@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 import fetchHomeImages from '../data/home-images';
 
@@ -27,32 +26,37 @@ const Intro = ({ homeImages }) => (
   </Carousel>
 );
 
+const ProperLink = ({ linkUrl, children }) => {
+  if (linkUrl.startsWith('http')) {
+    return (
+      <a href={linkUrl} rel="noopener noreferrer" target="_blank">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={linkUrl}>
+      <a>{children}</a>
+    </Link>
+  );
+};
 
 const ImportantSectionColumn = ({
   imageUrl, title, description, linkUrl,
-}) => {
-  let linkElement;
-  if (linkUrl.startsWith('http')) {
-    linkElement = (
-      <Button href={linkUrl} rel="noopener noreferrer" target="_blank" variant="primary">Ver detalles »</Button>
-    );
-  } else {
-    linkElement = (
-      <Link href={linkUrl} passHref>
-        <Button variant="primary">Ver detalles »</Button>
-      </Link>
-    );
-  }
-
-  return (
-    <Col md={4} className="d-flex flex-column align-items-center">
-      <Image src={imageUrl} roundedCircle fluid />
-      <h4>{title}</h4>
-      <p className="flex-grow-1">{description}</p>
-      {linkElement}
-    </Col>
-  );
-};
+}) => (
+  <Col md={4} className="d-flex flex-column align-items-center">
+    <div className="important-section-icon rounded-circle">
+      <ProperLink linkUrl={linkUrl}>
+        <Image src={imageUrl} roundedCircle fluid />
+      </ProperLink>
+    </div>
+    <h4 className="font-weight-bold">{title}</h4>
+    <p className="flex-grow-1 mb-0">{description}</p>
+    <ProperLink linkUrl={linkUrl}>
+      <span>Leer más</span>
+    </ProperLink>
+  </Col>
+);
 
 const ImportantSections = () => (
   <section name="important-sections" className="text-center mt-2 mt-md-5">

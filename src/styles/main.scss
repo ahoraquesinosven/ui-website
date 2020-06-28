@@ -37,3 +37,12 @@ img.content-image {
     object-position: 0 100%;
   }
 }
+
+.important-section-icon {
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.important-section-icon:hover {
+  transform: scale(1.1) rotate(8deg);
+}

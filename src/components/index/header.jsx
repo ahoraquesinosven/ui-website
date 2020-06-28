@@ -8,7 +8,7 @@ const Header = () => (
     <Container fluid>
       <Link href="/" passHref>
         <Navbar.Brand>
-          <img src="./images/AQSNV-logo.jpg" height="90px" />
+          <img src="./images/AQSNV-logo.jpg" height="90px" alt="Observatorio de las Violencias de Género Ahora que si nos ven" />
         </Navbar.Brand>
       </Link>
       <Navbar.Toggle />

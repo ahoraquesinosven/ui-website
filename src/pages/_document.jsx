@@ -13,6 +13,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis" />
         </Head>
         <body>
           <Main />

@@ -14,13 +14,13 @@ const Intro = ({ homeImages }) => (
   <Carousel className="intro-carousel">
     {homeImages.map((home) => (
       <Carousel.Item key={home.id}>
+        <img src={home.mainImage.url} className="d-block w-100 " alt={home.mainImageTitle} />
         <Link href={home.URL} passHref>
-          <img src={home.mainImage.url} className="d-block w-100 " alt={home.mainImageTitle} />
+          <Carousel.Caption>
+            <h2 className="display-1">{home.mainImageTitle}</h2>
+            <p>{home.mainImageSubTitle}</p>
+          </Carousel.Caption>
         </Link>
-        <Carousel.Caption>
-          <h2 className="display-1">{home.mainImageTitle}</h2>
-          <p>{home.mainImageSubTitle}</p>
-        </Carousel.Caption>
       </Carousel.Item>
     ))}
   </Carousel>

@@ -1,47 +1,17 @@
-import Link from 'next/link';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import CardForList from '../../components/cardForList';
 import { fetchReports, fetchReportCategory } from '../../data/reports';
 
-const ReportsBreadcrumb = ({ category }) => {
-  let categoryBreadcrumb = null;
-  if (category) {
-    categoryBreadcrumb = (
-      <Link href={{ pathname: '/reports', query: { category: category.slug } }} passHref>
-        <Breadcrumb.Item>{category.title}</Breadcrumb.Item>
-      </Link>
-    );
-  }
-  return (
-    <Breadcrumb>
-      <Link href="/" passHref>
-        <Breadcrumb.Item>Inicio</Breadcrumb.Item>
-      </Link>
-      <Link href="/reports" passHref>
-        <Breadcrumb.Item>Informes</Breadcrumb.Item>
-      </Link>
-      {categoryBreadcrumb}
-    </Breadcrumb>
-  );
-};
-
-const SectionBanner = ({ category }) => {
-  let title = <h2>Informes</h2>;
-  if (category) {
-    title = <h2>{category.title}</h2>;
-  }
-  return (
-    <div className="section-header">
-      {title}
-    </div>
-  );
-};
+const SectionBanner = ({ category }) => (
+  <div className="section-header">
+    <h2>{category ? category.title : 'Informes'}</h2>
+  </div>
+);
 
 const Reports = ({ reports, category }) => (
-  < >
+  <>
     <SectionBanner category={category} />
     <Container className="mt-2">
       <Row lg={3} md={2} sm={1}>

@@ -12,7 +12,7 @@ const Header = () => (
         </Navbar.Brand>
       </Link>
       <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-end header-text">
+      <Navbar.Collapse className="justify-content-end">
         <Nav>
           <Link href="/reports?category=registro-femicidios" passHref>
             <Nav.Link>Femicidios</Nav.Link>

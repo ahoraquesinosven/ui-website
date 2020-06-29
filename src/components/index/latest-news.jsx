@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import CardForList from '../cardForList';
 
 const contentKindTranslation = {
-  activity: 'Activity',
+  activity: 'Actividad',
   media_presence: 'En los medios',
   report: 'Informe',
   campaign: 'Campaña',

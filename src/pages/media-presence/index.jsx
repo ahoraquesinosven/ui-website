@@ -24,7 +24,7 @@ const MediaPresences = ({ mediaPresences }) => (
     <Row lg={3} md={2} sm={1}>
       {mediaPresences.map((mediaPresence) => (
         <Col key={mediaPresence.id} className="mb-5">
-          <CardForList content={mediaPresence} kind="activity" mainDate={mediaPresence.publicationDate} />
+          <CardForList content={mediaPresence} kind="media_presence" mainDate={mediaPresence.publicationDate} />
         </Col>
       ))}
     </Row>

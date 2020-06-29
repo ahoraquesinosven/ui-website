@@ -28,18 +28,31 @@ const ReportsBreadcrumb = ({ category }) => {
   );
 };
 
+const SectionBanner = ({ category }) => {
+  let title = <h2>Informes</h2>;
+  if (category) {
+    title = <h2>{category.title}</h2>;
+  }
+  return (
+    <div className="section-header">
+      {title}
+    </div>
+  );
+};
+
 const Reports = ({ reports, category }) => (
-  <Container className="mt-2">
-    <ReportsBreadcrumb category={category} />
-    <h2 className="mt-2">Informes</h2>
-    <Row lg={3} md={2} sm={1}>
-      {reports.map((report) => (
-        <Col key={report.id} className="mb-5">
-          <CardForList content={report} kind="report" mainDate={report.toDate} badge={report.category.title} />
-        </Col>
-      ))}
-    </Row>
-  </Container>
+  < >
+    <SectionBanner category={category} />
+    <Container className="mt-2">
+      <Row lg={3} md={2} sm={1}>
+        {reports.map((report) => (
+          <Col key={report.id} className="mb-5">
+            <CardForList content={report} kind="report" mainDate={report.toDate} badge={report.category.title} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  </>
 );
 
 export default Reports;

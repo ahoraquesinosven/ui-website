@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import OptionalImage from './optional-image';
 
 const AdditionalImagesCarousel = ({ images }) => {
-  if (images) {
+  if (images && images.length > 0) {
     return (
       <Carousel>
         {images.map((image) => (

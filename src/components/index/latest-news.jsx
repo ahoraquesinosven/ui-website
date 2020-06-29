@@ -12,7 +12,7 @@ const contentKindTranslation = {
 
 const LatestNews = ({ featuredContent }) => (
   <section name="latest-news">
-    <h2>Últimas noticias</h2>
+    <h4 className="header-text">Últimas noticias</h4>
     <Row lg={3} md={2} sm={1}>
       {featuredContent.map((content) => (
         <Col key={`${content.kind}-${content.id}`} className="mb-5">

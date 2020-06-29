@@ -32,6 +32,7 @@ img.content-image {
     left: 15%;
     right: 15%;
     font-size: 150%;
+    font-family: 'Bebas Neue', serif;
   }
 
   img {
@@ -56,4 +57,10 @@ img.content-image {
 .carousel-control-next,
 .carousel-control-prev {
     filter: invert(100%);
+}
+
+h1, h2, h3, h4, .navbar-nav {
+  font-family: 'Ubuntu', serif;
+  font-weight: bolder;
+  text-transform: uppercase;
 }

@@ -1,4 +1,3 @@
-import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
 import { faInstagramSquare, faTwitterSquare, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
@@ -10,7 +9,7 @@ import Link from 'next/link';
 const FooterIcon = ({
   icon, linkUrl, size,
 }) => (
-  <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="bg-dark flex">
+  <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="bg-dark mr-2">
     <FontAwesomeIcon icon={icon} size={size} />
   </a>
 );
@@ -22,8 +21,29 @@ const Footer = () => (
       <Row>
         <Col xs="4" lg="6" className="text-left">
           <Image src="/images/LogoAQSNV.svg" fluid height="80px" width="180px" />
+          <div className="mt-2 mb-2">
+            <FooterIcon
+              icon={faInstagramSquare}
+              linkUrl="https://www.instagram.com/ahoraquesinosvenok/"
+              size="3x"
+            />
+            <FooterIcon
+              icon={faTwitterSquare}
+              linkUrl="https://twitter.com/ahoraquesinosv4"
+              size="3x"
+            />
+            <FooterIcon
+              icon={faFacebookSquare}
+              linkUrl="https://www.facebook.com/ahoraquesinosven/"
+              size="3x"
+            />
+          </div>
+          <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
+            <Image src="./images/modo-glitter-logo.png" height="60px" />
+          </a>
         </Col>
         <Col>
+          <h5 className="text-primary">SECCIONES</h5>
           <Link href="/reports?category=registro-femicidios" passHref>
             <a>Femicidios</a>
           </Link>
@@ -35,49 +55,7 @@ const Footer = () => (
           <Link href="/campaigns" passHref>
             <a>Campañas</a>
           </Link>
-        </Col>
-        <Col className="text-right">
-          <div>
-            <Image src="./images/marea.png" height="30px" />
-          </div>
-          <FooterIcon
-            className="mt-1"
-            icon={faInstagramSquare}
-            linkUrl="https://www.instagram.com/somosmarea_/"
-            size="2x"
-          />
-          &nbsp;
-          <FooterIcon
-            className="mt-1"
-            icon={faFacebookSquare}
-            linkUrl="https://www.facebook.com/MAREA-Feminismo-Popular-y-Disidente-295569761292674/"
-            size="2x"
-          />
-        </Col>
-      </Row>
-      <Row className="mt-1">
-        <Col xs="4" lg="6" className="text-left">
-          <FooterIcon
-            icon={faInstagramSquare}
-            linkUrl="https://www.instagram.com/ahoraquesinosvenok/"
-            size="3x"
-          />
-          &nbsp;
-          &nbsp;
-          <FooterIcon
-            icon={faTwitterSquare}
-            linkUrl="https://twitter.com/ahoraquesinosv4"
-            size="3x"
-          />
-          &nbsp;
-          &nbsp;
-          <FooterIcon
-            icon={faFacebookSquare}
-            linkUrl="https://www.facebook.com/ahoraquesinosven/"
-            size="3x"
-          />
-        </Col>
-        <Col>
+          <br />
           <Link href="/media-presence" passHref>
             <a>En Los Medios</a>
           </Link>
@@ -85,25 +63,30 @@ const Footer = () => (
           <Link href="/activities" passHref>
             <a>Actividades</a>
           </Link>
-        </Col>
-      </Row>
-      <Row className="mt-1">
-        <Col>
-          <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="text-light">
-            <FontAwesomeIcon icon={faBullhorn} size="2x" className="mr-2" />
-          </a>
-          <p className="mb-3 text-light"> Nuestra Radio Modo Glitter</p>
-        </Col>
-        <Col>
+          <br />
           <Link href="/about" passHref>
             <a>Quiénes Somos</a>
           </Link>
         </Col>
+        <Col className="text-right">
+          <div>
+            <Image src="./images/marea.png" height="30px" />
+          </div>
+          <FooterIcon
+            icon={faInstagramSquare}
+            linkUrl="https://www.instagram.com/somosmarea_/"
+            size="2x"
+          />
+          <FooterIcon
+            icon={faFacebookSquare}
+            linkUrl="https://www.facebook.com/MAREA-Feminismo-Popular-y-Disidente-295569761292674/"
+            size="2x"
+          />
+        </Col>
       </Row>
-      <div className="mb-3 text-center text-muted">
+      <div className=" mt-2 mb-3 text-center text-muted">
         Copyright 2020
       </div>
-
     </Container>
   </div>
 );

@@ -77,7 +77,7 @@ const ImportantSections = () => (
         imageUrl="/images/radio-1.jpg"
         title="Escuchanos"
         description="Modo Glitter es nuestro programa de radio. Todos los sábados 16hs en FM Tribu 88.7"
-        linkUrl="https://www.instagram.com/modoglitter/"
+        linkUrl="https://www.youtube.com/c/modoglitter?utm_source=sitio-observatorio&utm_medium=home-page&utm_campaign=link-home-page-observatorio"
       />
     </Row>
   </section>

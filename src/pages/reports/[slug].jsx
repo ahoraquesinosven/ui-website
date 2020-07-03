@@ -1,8 +1,6 @@
 import { faCalendarDay, faDownload, faGavel } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
-import Link from 'next/link';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -14,20 +12,6 @@ import { fetchReport } from '../../data/reports';
 
 moment.locale('es');
 
-const ReportBreadcrumbs = ({ report }) => (
-  <Breadcrumb>
-    <Link href="/" passHref>
-      <Breadcrumb.Item>Inicio</Breadcrumb.Item>
-    </Link>
-    <Link href="/reports" passHref>
-      <Breadcrumb.Item>Informes</Breadcrumb.Item>
-    </Link>
-    <Link href={{ pathname: '/reports', query: { category: report.category.slug } }} passHref>
-      <Breadcrumb.Item>{report.category.title}</Breadcrumb.Item>
-    </Link>
-    <Breadcrumb.Item active>{report.title}</Breadcrumb.Item>
-  </Breadcrumb>
-);
 
 const ReportDetails = ({ report }) => {
   let listGroupResultForLaw;
@@ -74,7 +58,6 @@ const ReportDetails = ({ report }) => {
 
 const Report = ({ report }) => (
   <Container className="mt-2">
-    <ReportBreadcrumbs report={report} />
     <h1>{report.title}</h1>
     <Row>
       <Col lg={3}>

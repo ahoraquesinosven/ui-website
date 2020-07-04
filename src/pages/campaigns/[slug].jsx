@@ -1,5 +1,7 @@
 import moment from 'moment';
 import Link from 'next/link';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Markdown from '../../components/markdown-renderer';
@@ -16,7 +18,7 @@ const CampaignDetails = ({ campaign }) => {
   if (campaign.lawNumber) {
     resultForLaw = (
       <>
-        <h8 className="pr-1 pl-4"><b>Ley:</b></h8>
+        <b className="pr-1 pl-4">Ley:</b>
         {campaign.lawNumber}
       </>
     );
@@ -25,7 +27,8 @@ const CampaignDetails = ({ campaign }) => {
     resultForAttachment = (
       <div className="text-center mb-2 mt-2">
         <Button variant="primary" href={campaign.attachment.url} rel="noopener noreferrer" target="_blank">
-          <h8 text-color="warning">Descargar</h8>
+          <FontAwesomeIcon icon={faDownload} fixedWidth className="mr-2" />
+          <a>Descargar</a>
         </Button>
       </div>
     );
@@ -34,7 +37,7 @@ const CampaignDetails = ({ campaign }) => {
   return (
     <>
       <div className="text-center mb-2">
-        <h8 className="pr-1"><b>Fecha de Lanzamiento:</b></h8>
+        <b className="pr-1">Lanzamiento:</b>
         {moment(campaign.launchDate).format('L')}
         {resultForLaw}
       </div>

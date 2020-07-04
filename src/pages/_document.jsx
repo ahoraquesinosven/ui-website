@@ -16,6 +16,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171618131-1" />
           <script
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
                     window.dataLayer = window.dataLayer || [];

@@ -1,5 +1,7 @@
 import moment from 'moment';
 import Link from 'next/link';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Markdown from '../../components/markdown-renderer';
@@ -16,7 +18,7 @@ const ReportDetails = ({ report }) => {
   if (report.lawNumber) {
     resultForLaw = (
       <>
-        <h8 className="pr-1 pl-4"><b>Ley:</b></h8>
+        <b className="pr-1 pl-4">Ley:</b>
         {report.lawNumber}
       </>
     );
@@ -25,7 +27,8 @@ const ReportDetails = ({ report }) => {
     resultForAttachment = (
       <div className="text-center mb-2 mt-2">
         <Button variant="primary" href={report.attachment.url} rel="noopener noreferrer" target="_blank">
-          <h8 text-color="warning">Descargar</h8>
+          <FontAwesomeIcon icon={faDownload} fixedWidth className="mr-2" />
+          <a text-color="warning">Descargar</a>
         </Button>
       </div>
     );
@@ -34,9 +37,9 @@ const ReportDetails = ({ report }) => {
   return (
     <>
       <div className="text-center mb-2">
-        <h8 className="pr-1"><b>Inicio:</b></h8>
+        <b className="pr-1">Inicio:</b>
         {moment(report.fromDate).format('L')}
-        <h8 className="pr-1 pl-4"><b>Fin:</b></h8>
+        <b className="pr-1 pl-4">Fin:</b>
         {moment(report.toDate).format('L')}
         {resultForLaw}
       </div>
@@ -50,7 +53,7 @@ const Report = ({ report }) => (
     <div className="detail-header">
       <h1 className="pb-1">{report.title}</h1>
       <Link href={{ pathname: '/reports', query: { category: report.category.slug } }} passHref>
-        <a><h7 className="text-secondary">{report.category.title}</h7></a>
+        <a>{report.category.title}</a>
       </Link>
     </div>
     <OptionalImage image={report.mainImage} fluid rounded className="mt-3 mb-3 content-image" />

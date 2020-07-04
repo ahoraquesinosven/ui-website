@@ -53,7 +53,7 @@ const Report = ({ report }) => (
         <a><h7 className="text-secondary">{report.category.title}</h7></a>
       </Link>
     </div>
-    <OptionalImage image={report.mainImage} fluid rounded className="mb-3 content-image" />
+    <OptionalImage image={report.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
     <ReportDetails report={report} />
     <Markdown source={report.content} />
     <AdditionalImagesCarousel images={report.additionalImages} />

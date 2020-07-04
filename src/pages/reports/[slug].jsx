@@ -57,8 +57,12 @@ const ReportDetails = ({ report }) => {
 };
 
 const Report = ({ report }) => (
-  <Container className="mt-2">
-    <h1>{report.title}</h1>
+  <Container className="mt-5">
+    <Row>
+      <Col className="detail-header">
+        <h1 className="pl-2 pb-2 pt-2">{report.title}</h1>
+      </Col>
+    </Row>
     <Row>
       <Col lg={3}>
         <ReportDetails report={report} />

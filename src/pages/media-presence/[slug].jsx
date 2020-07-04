@@ -2,28 +2,13 @@ import { faCalendarDay, faNewspaper, faExternalLinkAlt } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import Link from 'next/link';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Row from 'react-bootstrap/Row';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import { fetchMediaPresence } from '../../data/media-presence';
 
 moment.locale('es');
-
-const MediaPresenceBreadcrumbs = ({ mediaPresence }) => (
-  <Breadcrumb>
-    <Link href="/" passHref>
-      <Breadcrumb.Item>Inicio</Breadcrumb.Item>
-    </Link>
-    <Link href="/media-presence" passHref>
-      <Breadcrumb.Item>En los medios</Breadcrumb.Item>
-    </Link>
-    <Breadcrumb.Item active>{mediaPresence.title}</Breadcrumb.Item>
-  </Breadcrumb>
-);
 
 const MediaPresenceDetails = ({ mediaPresence }) => (
   <ListGroup variant="flush">
@@ -49,17 +34,15 @@ const MediaPresenceDetails = ({ mediaPresence }) => (
 
 const MediaPresence = ({ mediaPresence }) => (
   <Container className="mt-2">
-    <MediaPresenceBreadcrumbs mediaPresence={mediaPresence} />
-    <h1>{mediaPresence.title}</h1>
-    <Row>
-      <Col lg={3}>
-        <MediaPresenceDetails mediaPresence={mediaPresence} />
-      </Col>
-      <Col>
-        <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={mediaPresence.content} />
-      </Col>
-    </Row>
+    <div className="detail-header">
+      <h1 className="pb-1">{mediaPresence.title}</h1>
+      <Link href="/media-presence" passHref>
+        <a>En los medios</a>
+      </Link>
+    </div>
+    <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mb-3 content-image" />
+    <MediaPresenceDetails mediaPresence={mediaPresence} />
+    <Markdown source={mediaPresence.content} />
   </Container>
 );
 

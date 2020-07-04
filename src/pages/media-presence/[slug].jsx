@@ -10,10 +10,10 @@ import { fetchMediaPresence } from '../../data/media-presence';
 moment.locale('es');
 
 const MediaPresenceDetails = ({ mediaPresence }) => (
-  <div className="text-center mb-2">
-    <h8 className="pr-1"><b>Publicación:</b></h8>
+  <div className="text-center mb-5">
+    <b className="pr-1">Publicación:</b>
     {moment(mediaPresence.publicationDate).format('L')}
-    <h8 className="pr-1 pl-5"><b>Medio:</b></h8>
+    <b className="pr-1 pl-5">Medio:</b>
     {mediaPresence.source}
     <a className="pr-1 pl-5" rel="noopener noreferrer" target="_blank" href={mediaPresence.sourceLink}>
       <FontAwesomeIcon icon={faExternalLinkAlt} fixedWidth className="mr-2" />

@@ -13,7 +13,7 @@ const ActivityDetails = ({ activity }) => {
   const encodedLocation = encodeURIComponent(activity.location);
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
   return (
-    <div className="text-center mb-2">
+    <div className="text-center mb-5">
       <b className="pr-1">Lugar:</b>
       <a rel="noopener noreferrer" target="_blank" href={mapUrl}>
         <FontAwesomeIcon icon={faMapMarkedAlt} fixedWidth className="mr-2" />

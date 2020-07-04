@@ -25,7 +25,7 @@ const CampaignDetails = ({ campaign }) => {
   }
   if (campaign.attachment) {
     resultForAttachment = (
-      <div className="text-center mb-2 mt-2">
+      <div className="text-center mb-5 mt-2">
         <Button variant="primary" href={campaign.attachment.url} rel="noopener noreferrer" target="_blank">
           <FontAwesomeIcon icon={faDownload} fixedWidth className="mr-2" />
           <a>Descargar</a>

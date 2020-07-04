@@ -1,9 +1,7 @@
-import { faCalendarDay, faDownload, faGavel } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
-import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
@@ -13,45 +11,37 @@ moment.locale('es');
 
 
 const ReportDetails = ({ report }) => {
-  let listGroupResultForLaw;
-  let listGroupResultForAttachment;
+  let resultForLaw;
+  let resultForAttachment;
   if (report.lawNumber) {
-    listGroupResultForLaw = (
-      <ListGroup.Item>
-        <h5>Ley</h5>
-        <FontAwesomeIcon icon={faGavel} fixedWidth className="mr-2" />
+    resultForLaw = (
+      <>
+        <h8 className="pr-1 pl-4"><b>Ley:</b></h8>
         {report.lawNumber}
-      </ListGroup.Item>
+      </>
     );
   }
   if (report.attachment) {
-    listGroupResultForAttachment = (
-      <ListGroup.Item>
-        <h5>Descargar Archivo</h5>
-        <a rel="noopener noreferrer" target="_blank" href={report.attachment.url}>
-          <FontAwesomeIcon icon={faDownload} fixedWidth className="mr-2" />
-          {report.attachment.name}
-        </a>
-
-      </ListGroup.Item>
+    resultForAttachment = (
+      <div className="text-center mb-2 mt-2">
+        <Button variant="primary" href={report.attachment.url} rel="noopener noreferrer" target="_blank">
+          <h8 text-color="warning">Descargar</h8>
+        </Button>
+      </div>
     );
   }
 
   return (
-    <ListGroup variant="flush">
-      <ListGroup.Item>
-        <h5>Inicio del Informe</h5>
-        <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(report.fromDate).format('LL')}
-      </ListGroup.Item>
-      <ListGroup.Item>
-        <h5>Fin del Informe</h5>
-        <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(report.toDate).format('LL')}
-      </ListGroup.Item>
-      {listGroupResultForLaw}
-      {listGroupResultForAttachment}
-    </ListGroup>
+    <>
+      <div className="text-center mb-2">
+        <h8 className="pr-1"><b>Inicio:</b></h8>
+        {moment(report.fromDate).format('L')}
+        <h8 className="pr-1 pl-4"><b>Fin:</b></h8>
+        {moment(report.toDate).format('L')}
+        {resultForLaw}
+      </div>
+      {resultForAttachment}
+    </>
   );
 };
 

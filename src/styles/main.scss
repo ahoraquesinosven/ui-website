@@ -95,3 +95,11 @@ h1, h2, h3, h4, .navbar-nav {
     font-family: 'Ubuntu', serif;
   }
 }
+
+.footer-icon {
+  font-size: calc(1vw + 1vh);
+}
+
+.footer-line {
+  border-top: 1px solid $gray-600;
+}

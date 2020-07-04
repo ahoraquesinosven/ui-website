@@ -1,12 +1,7 @@
-import { faCalendarDay, faGavel, faDownload } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import Link from 'next/link';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
@@ -14,72 +9,53 @@ import { fetchCampaign } from '../../data/campaigns';
 
 moment.locale('es');
 
-const CampaignBreadcrumbs = ({ campaign }) => (
-  <Breadcrumb>
-    <Link href="/" passHref>
-      <Breadcrumb.Item>Inicio</Breadcrumb.Item>
-    </Link>
-    <Link href="/campaigns" passHref>
-      <Breadcrumb.Item>Campañas</Breadcrumb.Item>
-    </Link>
-    <Breadcrumb.Item active>{campaign.title}</Breadcrumb.Item>
-  </Breadcrumb>
-);
 
 const CampaignDetails = ({ campaign }) => {
-  let listGroupResultForLaw;
-  let listGroupResultForAttachment;
+  let resultForLaw;
+  let resultForAttachment;
   if (campaign.lawNumber) {
-    listGroupResultForLaw = (
-      <ListGroup.Item>
-        <h5>Ley</h5>
-        <FontAwesomeIcon icon={faGavel} fixedWidth className="mr-2" />
+    resultForLaw = (
+      <>
+        <h8 className="pr-1 pl-4"><b>Ley:</b></h8>
         {campaign.lawNumber}
-      </ListGroup.Item>
+      </>
     );
   }
   if (campaign.attachment) {
-    listGroupResultForAttachment = (
-      <ListGroup.Item>
-        <h5>Descargar Archivo</h5>
-        <a rel="noopener noreferrer" target="_blank" href={campaign.attachment.url}>
-          <FontAwesomeIcon icon={faDownload} fixedWidth className="mr-2" />
-          {campaign.attachment.name}
-        </a>
-
-      </ListGroup.Item>
+    resultForAttachment = (
+      <div className="text-center mb-2 mt-2">
+        <Button variant="primary" href={campaign.attachment.url} rel="noopener noreferrer" target="_blank">
+          <h8 text-color="warning">Descargar</h8>
+        </Button>
+      </div>
     );
   }
 
   return (
-    <ListGroup variant="flush">
-      <ListGroup.Item>
-        <h5>Lanzamiento</h5>
-        <FontAwesomeIcon icon={faCalendarDay} fixedWidth className="mr-2" />
-        {moment(campaign.launchDate).format('LL')}
-      </ListGroup.Item>
-      {listGroupResultForLaw}
-      {listGroupResultForAttachment}
-    </ListGroup>
+    <>
+      <div className="text-center mb-2">
+        <h8 className="pr-1"><b>Fecha de Lanzamiento:</b></h8>
+        {moment(campaign.launchDate).format('L')}
+        {resultForLaw}
+      </div>
+      {resultForAttachment}
+    </>
   );
 };
 
 
 const Campaign = ({ campaign }) => (
   <Container className="mt-2">
-    <CampaignBreadcrumbs campaign={campaign} />
-    <h1>{campaign.title}</h1>
-    <Row>
-      <Col lg={3}>
-        <CampaignDetails campaign={campaign} />
-      </Col>
-      <Col>
-        <OptionalImage image={campaign.mainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={campaign.content} />
-        <AdditionalImagesCarousel images={campaign.additionalImages} />
-      </Col>
-    </Row>
-
+    <div className="detail-header">
+      <h1 className="pb-1">{campaign.title}</h1>
+      <Link href="/campaigns" passHref>
+        <a>Campaña</a>
+      </Link>
+    </div>
+    <OptionalImage image={campaign.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
+    <CampaignDetails campaign={campaign} />
+    <Markdown source={campaign.content} />
+    <AdditionalImagesCarousel images={campaign.additionalImages} />
   </Container>
 );
 

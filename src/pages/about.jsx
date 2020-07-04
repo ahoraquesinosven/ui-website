@@ -46,7 +46,7 @@ const MemberSocialLinks = ({ member }) => {
 
 
 const Member = ({ member }) => (
-  <Card className="mb-4">
+  <Card className="mb-4" style={{ height: '100%' }}>
     <Card.Img variant="top" src={member.photo.url} style={{ height: '15em', objectFit: 'cover', objectPosition: 'top' }} />
     <Card.Body>
       <Card.Title>{member.name}</Card.Title>
@@ -67,9 +67,9 @@ const AboutUs = ({ aboutUs, members }) => (
       <OptionalImage image={aboutUs.cover} fluid rounded className="mb-3 content-image" />
       <Markdown source={aboutUs.content} />
       <h2>Equipo</h2>
-      <Row lg={3} md={2} sm={1}>
+      <Row lg={3} md={2} sm={1} xs={1}>
         {members.map((member) => (
-          <Col key={member.id}>
+          <Col className="mb-4" key={member.id}>
             <Member member={member} />
           </Col>
         ))}

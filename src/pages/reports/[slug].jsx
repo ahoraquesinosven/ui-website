@@ -1,10 +1,9 @@
 import { faCalendarDay, faDownload, faGavel } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
-import Col from 'react-bootstrap/Col';
+import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Row from 'react-bootstrap/Row';
 import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
@@ -58,21 +57,16 @@ const ReportDetails = ({ report }) => {
 
 const Report = ({ report }) => (
   <Container className="mt-5">
-    <Row>
-      <Col className="detail-header">
-        <h1 className="pl-2 pb-2 pt-2">{report.title}</h1>
-      </Col>
-    </Row>
-    <Row>
-      <Col lg={3}>
-        <ReportDetails report={report} />
-      </Col>
-      <Col>
-        <OptionalImage image={report.mainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={report.content} />
-        <AdditionalImagesCarousel images={report.additionalImages} />
-      </Col>
-    </Row>
+    <div className="detail-header">
+      <h1 className="pb-1">{report.title}</h1>
+      <Link href={{ pathname: '/reports', query: { category: report.category.slug } }} passHref>
+        <a><h7 className="text-secondary">{report.category.title}</h7></a>
+      </Link>
+    </div>
+    <OptionalImage image={report.mainImage} fluid rounded className="mb-3 content-image" />
+    <ReportDetails report={report} />
+    <Markdown source={report.content} />
+    <AdditionalImagesCarousel images={report.additionalImages} />
   </Container>
 );
 

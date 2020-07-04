@@ -39,7 +39,7 @@ const Footer = () => (
             />
           </div>
           <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
-            <Image src="./images/modo-glitter-logo.png" height="70px" />
+            <Image src="/images/modo-glitter-logo.png" height="70px" />
           </a>
         </Col>
         <Col xs="4" className="text-center">
@@ -70,7 +70,7 @@ const Footer = () => (
         </Col>
         <Col xs="4" className="text-right">
           <div className="mb-2">
-            <Image src="./images/marea.png" height="35px" />
+            <Image src="/images/marea.png" height="35px" />
           </div>
           <FooterIcon
             icon={faInstagramSquare}

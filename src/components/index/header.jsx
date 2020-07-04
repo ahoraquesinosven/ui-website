@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 
 const Header = () => (
-  <Navbar bg="light" expand="md" sticky="top" className="shadow mt-2">
+  <Navbar bg="light" expand="md" sticky="top" className="shadow">
     <Container fluid>
       <Link href="/" passHref>
         <Navbar.Brand>

@@ -9,7 +9,7 @@ import Link from 'next/link';
 const FooterIcon = ({
   icon, linkUrl, size,
 }) => (
-  <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="bg-dark mr-2">
+  <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="bg-dark mr-2 footer-icon">
     <FontAwesomeIcon icon={icon} size={size} />
   </a>
 );
@@ -19,7 +19,7 @@ const Footer = () => (
   <div className="bg-dark">
     <Container as="footer" className="mt-5">
       <Row>
-        <Col xs="4" lg="6" className="text-left">
+        <Col xs="4" className="text-left">
           <Image src="/images/LogoAQSNV.svg" fluid height="90px" width="185px" />
           <div className="mt-2 mb-2">
             <FooterIcon
@@ -42,7 +42,7 @@ const Footer = () => (
             <Image src="./images/modo-glitter-logo.png" height="70px" />
           </a>
         </Col>
-        <Col>
+        <Col xs="4" className="text-center">
           <h5 className="text-primary">SECCIONES</h5>
           <Link href="/reports?category=registro-femicidios" passHref>
             <a>Femicidios</a>
@@ -68,9 +68,9 @@ const Footer = () => (
             <a>Quiénes Somos</a>
           </Link>
         </Col>
-        <Col className="text-right">
-          <div>
-            <Image src="./images/marea.png" height="30px" />
+        <Col xs="4" className="text-right">
+          <div className="mb-2">
+            <Image src="./images/marea.png" height="35px" />
           </div>
           <FooterIcon
             icon={faInstagramSquare}
@@ -84,8 +84,8 @@ const Footer = () => (
           />
         </Col>
       </Row>
-      <div className=" mt-2 mb-3 text-center text-muted">
-        Copyright 2020
+      <div className="mt-5 mb-3 text-center text-muted footer-line">
+        <div className="mt-3">Copyright 2020</div>
       </div>
     </Container>
   </div>

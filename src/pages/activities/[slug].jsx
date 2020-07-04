@@ -14,12 +14,12 @@ const ActivityDetails = ({ activity }) => {
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
   return (
     <div className="text-center mb-2">
-      <h8 className="pr-1"><b>Lugar:</b></h8>
+      <b className="pr-1">Lugar:</b>
       <a rel="noopener noreferrer" target="_blank" href={mapUrl}>
         <FontAwesomeIcon icon={faMapMarkedAlt} fixedWidth className="mr-2" />
         {activity.location}
       </a>
-      <h8 className="pr-1 pl-4"><b>Fecha:</b></h8>
+      <b className="pr-1 pl-4">Fecha:</b>
       {moment(activity.dateTime).format('LLL')}
     </div>
   );
@@ -30,7 +30,7 @@ const Activity = ({ activity }) => (
     <div className="detail-header">
       <h1 className="pb-1">{activity.title}</h1>
       <Link href={{ pathname: '/activities', query: { category: activity.category.slug } }} passHref>
-        <a><h7 className="text-secondary">{activity.category.title}</h7></a>
+        <a>{activity.category.title}</a>
       </Link>
     </div>
     <OptionalImage image={activity.mainImage} fluid rounded className="mt-3 mb-3 content-image" />

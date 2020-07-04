@@ -1,5 +1,5 @@
 $primary: #ec268f;
-$secondary: #e5e523;
+$secondary: #90278e;
 $success: #1ded67;
 $info: #2d97d3;
 $warning: #e5e523;
@@ -83,5 +83,15 @@ h1, h2, h3, h4, .navbar-nav {
     min-height: 40vh;
     object-fit: cover;
     object-position: 0 100%;
+  }
+}
+
+.detail-header {
+  border-left: 3px solid $secondary;
+  padding: 1rem 0 1rem 2rem;
+
+  a {
+    color: $secondary;
+    font-family: 'Ubuntu', serif;
   }
 }

@@ -51,18 +51,15 @@ const ActivityDetails = ({ activity }) => {
 
 const Activity = ({ activity }) => (
   <Container className="mt-2">
-    <ActivityBreadcrumbs activity={activity} />
-    <h1>{activity.title}</h1>
-    <p>{activity.summary}</p>
-    <Row>
-      <Col lg={3}>
-        <ActivityDetails activity={activity} />
-      </Col>
-      <Col>
-        <OptionalImage image={activity.mainImage} fluid rounded className="mb-3 content-image" />
-        <Markdown source={activity.content} />
-      </Col>
-    </Row>
+    <div className="detail-header">
+      <h1 className="pb-1">{activity.title}</h1>
+      <Link href={{ pathname: '/activities', query: { category: activity.category.slug } }} passHref>
+        <a><h7 className="text-secondary">{activity.category.title}</h7></a>
+      </Link>
+    </div>
+    <OptionalImage image={activity.mainImage} fluid rounded className="mb-3 content-image" />
+    <ActivityDetails activity={activity} />
+    <Markdown source={activity.content} />
   </Container>
 );
 

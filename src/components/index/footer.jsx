@@ -1,4 +1,6 @@
-import { faInstagramSquare, faTwitterSquare, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import {
+  faInstagramSquare, faTwitterSquare, faFacebookSquare, faYoutubeSquare,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,7 +21,7 @@ const Footer = () => (
   <div className="bg-dark">
     <Container as="footer" className="mt-5">
       <Row>
-        <Col xs="4" className="text-left">
+        <Col xs={12} md={4} className="text-md-left text-center mb-5">
           <Image src="/images/LogoAQSNV.svg" fluid height="90px" width="185px" />
           <div className="mt-2 mb-2">
             <FooterIcon
@@ -37,13 +39,18 @@ const Footer = () => (
               linkUrl="https://www.facebook.com/ahoraquesinosven/"
               size="3x"
             />
+            <FooterIcon
+              icon={faYoutubeSquare}
+              linkUrl="https://www.youtube.com/channel/UCt6qbrrlGd9BSjDqANOdh8g"
+              size="3x"
+            />
           </div>
           <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
             <Image src="/images/modo-glitter-logo.png" height="70px" />
           </a>
         </Col>
-        <Col xs="4" className="text-center">
-          <h5 className="text-primary">SECCIONES</h5>
+        <Col xs={12} md={4} className="text-center mb-5">
+          <h5 className="text-primary"><b>SECCIONES</b></h5>
           <Link href="/reports?category=registro-femicidios" passHref>
             <a>Femicidios</a>
           </Link>
@@ -68,7 +75,7 @@ const Footer = () => (
             <a>Quiénes Somos</a>
           </Link>
         </Col>
-        <Col xs="4" className="text-right">
+        <Col xs={12} md={4} className="text-md-right text-center mb-5">
           <div className="mb-2">
             <Image src="/images/marea.png" height="35px" />
           </div>
@@ -84,7 +91,7 @@ const Footer = () => (
           />
         </Col>
       </Row>
-      <div className="mt-5 mb-3 text-center text-muted footer-line">
+      <div className="mb-3 text-center text-muted footer-line">
         <div className="mt-3">Copyright 2020</div>
       </div>
     </Container>

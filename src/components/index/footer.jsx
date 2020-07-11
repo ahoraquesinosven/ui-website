@@ -55,7 +55,7 @@ const Footer = () => (
             <a>Femicidios</a>
           </Link>
           <br />
-          <Link href="/reports" passHref>
+          <Link href="/reports?categoryExcluded=registro-femicidios" passHref>
             <a>Informes</a>
           </Link>
           <br />

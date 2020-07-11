@@ -34,16 +34,28 @@ export async function getServerSideProps({ query }) {
   } else if (query.category) {
     categorySlugs = [query.category];
   }
-
   const categories = await fetchReportCategories(categorySlugs);
+
+  let categoryExcludedSlugs;
+  if (Array.isArray(query.categoryExcluded)) {
+    categoryExcludedSlugs = query.categoryExcluded;
+  } else if (query.categoryExcluded) {
+    categoryExcludedSlugs = [query.categoryExcluded];
+  }
+  const categoriesExcluded = await fetchReportCategories(categoryExcludedSlugs);
+
+
   const reports = await fetchReports({
     categories: categories ? (categories.map((category) => category.slug)) : null,
+    categoriesExcluded: categoriesExcluded
+      ? (categoriesExcluded.map((categoryExcluded) => categoryExcluded.slug)) : null,
     fromDate: query.fromDate,
   });
   return {
     props: {
       reports,
       categories,
+      categoriesExcluded,
     },
   };
 }

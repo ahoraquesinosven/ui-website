@@ -6,11 +6,16 @@ const fetchReport = async (slug) => {
   return (result && result.length === 1) ? result[0] : null;
 };
 
-const fetchReports = async ({ categories, fromDate }) => {
+const fetchReports = async ({ categories, categoriesExcluded, fromDate }) => {
   const parameters = ['_sort=toDate:DESC'];
   if (categories && categories.length > 0) {
     categories.forEach((category) => {
       parameters.push(`category.slug=${category}`);
+    });
+  }
+  if (categoriesExcluded && categoriesExcluded.length > 0) {
+    categoriesExcluded.forEach((categoryExcluded) => {
+      parameters.push(`category.slug_ne=${categoryExcluded}`);
     });
   }
   if (fromDate) {

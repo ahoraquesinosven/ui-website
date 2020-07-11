@@ -65,7 +65,7 @@ const ImportantSections = () => (
         imageUrl="/images/informe-1.jpg"
         title="Femicidios en 2020"
         description="Registro de femicidios durante el año actual, elaborado a partir del análisis de medios gráficos y digitales de todo el país."
-        linkUrl="reports?category=registro-femicidios&fromDate=2020-01-01"
+        linkUrl="reports?category=registro-femicidios&category=informe-femicidios&fromDate=2020-01-01"
       />
       <ImportantSectionColumn
         imageUrl="/images/iconos-01.jpg"

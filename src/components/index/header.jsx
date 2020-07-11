@@ -17,7 +17,7 @@ const Header = () => (
           <Link href="/reports?category=registro-femicidios" passHref>
             <Nav.Link>Femicidios</Nav.Link>
           </Link>
-          <Link href="/reports" passHref>
+          <Link href="/reports?categoryExcluded=registro-femicidios" passHref>
             <Nav.Link>Informes</Nav.Link>
           </Link>
           <Link href="/campaigns" passHref>

@@ -2,17 +2,17 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import CardForList from '../../components/cardForList';
-import { fetchReports, fetchReportCategory } from '../../data/reports';
+import { fetchReports, fetchReportCategories } from '../../data/reports';
 
-const SectionBanner = ({ category }) => (
+const SectionBanner = ({ categories }) => (
   <div className="section-header">
-    <h2>{category ? category.title : 'Informes'}</h2>
+    <h2>{categories && categories.length > 0 ? (categories.map((category) => category.title)).join(' - ') : 'Informes'}</h2>
   </div>
 );
 
-const Reports = ({ reports, category }) => (
+const Reports = ({ reports, categories }) => (
   <>
-    <SectionBanner category={category} />
+    <SectionBanner categories={categories} />
     <Container className="mt-2">
       <Row lg={3} md={2} sm={1}>
         {reports.map((report) => (
@@ -28,15 +28,34 @@ const Reports = ({ reports, category }) => (
 export default Reports;
 
 export async function getServerSideProps({ query }) {
-  const category = await fetchReportCategory(query.category);
+  let categorySlugs;
+  if (Array.isArray(query.category)) {
+    categorySlugs = query.category;
+  } else if (query.category) {
+    categorySlugs = [query.category];
+  }
+  const categories = await fetchReportCategories(categorySlugs);
+
+  let categoryExcludedSlugs;
+  if (Array.isArray(query.categoryExcluded)) {
+    categoryExcludedSlugs = query.categoryExcluded;
+  } else if (query.categoryExcluded) {
+    categoryExcludedSlugs = [query.categoryExcluded];
+  }
+  const categoriesExcluded = await fetchReportCategories(categoryExcludedSlugs);
+
+
   const reports = await fetchReports({
-    category: category ? category.slug : null,
+    categories: categories ? (categories.map((category) => category.slug)) : null,
+    categoriesExcluded: categoriesExcluded
+      ? (categoriesExcluded.map((categoryExcluded) => categoryExcluded.slug)) : null,
     fromDate: query.fromDate,
   });
   return {
     props: {
       reports,
-      category,
+      categories,
+      categoriesExcluded,
     },
   };
 }

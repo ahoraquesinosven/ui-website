@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Head from 'next/head';
 import Link from 'next/link';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,18 +49,24 @@ const CampaignDetails = ({ campaign }) => {
 
 
 const Campaign = ({ campaign }) => (
-  <Container className="mt-2">
-    <div className="detail-header">
-      <h1 className="pb-1">{campaign.title}</h1>
-      <Link href="/campaigns" passHref>
-        <a>Campaña</a>
-      </Link>
-    </div>
-    <OptionalImage image={campaign.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
-    <CampaignDetails campaign={campaign} />
-    <Markdown source={campaign.content} />
-    <AdditionalImagesCarousel images={campaign.additionalImages} />
-  </Container>
+  <>
+    <Head>
+      <title>AHORA QUE SI NOS VEN - Campañas - {campaign.title}</title>
+      <meta name="description" content={campaign.summary} />
+    </Head>
+    <Container className="mt-2">
+      <div className="detail-header">
+        <h1 className="pb-1">{campaign.title}</h1>
+        <Link href="/campaigns" passHref>
+          <a>Campaña</a>
+        </Link>
+      </div>
+      <OptionalImage image={campaign.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
+      <CampaignDetails campaign={campaign} />
+      <Markdown source={campaign.content} />
+      <AdditionalImagesCarousel images={campaign.additionalImages} />
+    </Container>
+  </>
 );
 
 export default Campaign;

@@ -1,6 +1,7 @@
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Head from 'next/head';
 import CardForList from '../../components/cardForList';
 import { fetchReports, fetchReportCategories } from '../../data/reports';
 
@@ -12,6 +13,9 @@ const SectionBanner = ({ categories }) => (
 
 const Reports = ({ reports, categories }) => (
   <>
+    <Head>
+      <title>AHORA QUE SI NOS VEN - Informes</title>
+    </Head>
     <SectionBanner categories={categories} />
     <Container className="mt-2">
       <Row lg={3} md={2} sm={1}>

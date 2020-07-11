@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Head from 'next/head';
 import Link from 'next/link';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -49,18 +50,24 @@ const ReportDetails = ({ report }) => {
 };
 
 const Report = ({ report }) => (
-  <Container className="mt-5">
-    <div className="detail-header">
-      <h1 className="pb-1">{report.title}</h1>
-      <Link href={{ pathname: '/reports', query: { category: report.category.slug } }} passHref>
-        <a>{report.category.title}</a>
-      </Link>
-    </div>
-    <OptionalImage image={report.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
-    <ReportDetails report={report} />
-    <Markdown source={report.content} />
-    <AdditionalImagesCarousel images={report.additionalImages} />
-  </Container>
+  <>
+    <Head>
+      <title>AHORA QUE SI NOS VEN - Informes - {report.title}</title>
+      <meta name="description" content={report.summary} />
+    </Head>
+    <Container className="mt-5">
+      <div className="detail-header">
+        <h1 className="pb-1">{report.title}</h1>
+        <Link href={{ pathname: '/reports', query: { category: report.category.slug } }} passHref>
+          <a>{report.category.title}</a>
+        </Link>
+      </div>
+      <OptionalImage image={report.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
+      <ReportDetails report={report} />
+      <Markdown source={report.content} />
+      <AdditionalImagesCarousel images={report.additionalImages} />
+    </Container>
+  </>
 );
 
 export default Report;

@@ -51,7 +51,10 @@ const CampaignDetails = ({ campaign }) => {
 const Campaign = ({ campaign }) => (
   <>
     <Head>
-      <title>AHORA QUE SI NOS VEN - Campañas - {campaign.title}</title>
+      <title>
+        AHORA QUE SI NOS VEN - Campañas -
+        {campaign.title}
+      </title>
       <meta name="description" content={campaign.summary} />
     </Head>
     <Container className="mt-2">

@@ -26,7 +26,10 @@ const MediaPresenceDetails = ({ mediaPresence }) => (
 const MediaPresence = ({ mediaPresence }) => (
   <>
     <Head>
-      <title>AHORA QUE SI NOS VEN - En los medios - {mediaPresence.title}</title>
+      <title>
+        AHORA QUE SI NOS VEN - En los medios -
+        {mediaPresence.title}
+      </title>
       <meta name="description" content={mediaPresence.summary} />
     </Head>
     <Container className="mt-2">

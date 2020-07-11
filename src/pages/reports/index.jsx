@@ -5,16 +5,31 @@ import Head from 'next/head';
 import CardForList from '../../components/cardForList';
 import { fetchReports, fetchReportCategories } from '../../data/reports';
 
+const pageTitle = (categories) => {
+  if (categories && categories.length > 0) {
+    return categories
+      .map((category) => category.title)
+      .join(' - ');
+  }
+
+  return 'Informes';
+};
+
 const SectionBanner = ({ categories }) => (
   <div className="section-header">
-    <h2>{categories && categories.length > 0 ? (categories.map((category) => category.title)).join(' - ') : 'Informes'}</h2>
+    <h2>{pageTitle(categories)}</h2>
   </div>
 );
 
 const Reports = ({ reports, categories }) => (
   <>
     <Head>
-      <title>AHORA QUE SI NOS VEN - Informes</title>
+      <title>
+        AHORA QUE SI NOS VEN
+        -
+        {pageTitle(categories)}
+      </title>
+      <meta name="description" content="Desde el Observatorio AQSNV comenzamos a relevar los femicidios en la Argentina a partir del análisis de medios gráficos y digitales de todo el país luego de la gran movilización del 3 de junio del 2015 en la que la sociedad entera exigió Ni Una Menos. De igual manera realizamos monitoreo de leyes e investigaciones relativas a los distintos tipos de violencias que sufrimos las mujeres, trans, travestis, lesbianas y personas no binaries en todos los ámbitos en los que desarrollamos nuestras relaciones interpersonales: hogar, trabajo, espacio públicos, instituciones educativas, etc." />
     </Head>
     <SectionBanner categories={categories} />
     <Container className="mt-2">

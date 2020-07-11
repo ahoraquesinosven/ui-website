@@ -52,7 +52,10 @@ const ReportDetails = ({ report }) => {
 const Report = ({ report }) => (
   <>
     <Head>
-      <title>AHORA QUE SI NOS VEN - Informes - {report.title}</title>
+      <title>
+        AHORA QUE SI NOS VEN - Informes -
+        {report.title}
+      </title>
       <meta name="description" content={report.summary} />
     </Head>
     <Container className="mt-5">

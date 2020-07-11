@@ -1,6 +1,7 @@
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
+import Head from 'next/head';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Markdown from '../../components/markdown-renderer';
@@ -23,17 +24,26 @@ const MediaPresenceDetails = ({ mediaPresence }) => (
 );
 
 const MediaPresence = ({ mediaPresence }) => (
-  <Container className="mt-2">
-    <div className="detail-header">
-      <h1 className="pb-1">{mediaPresence.title}</h1>
-      <Link href="/media-presence" passHref>
-        <a>En los medios</a>
-      </Link>
-    </div>
-    <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
-    <MediaPresenceDetails mediaPresence={mediaPresence} />
-    <Markdown source={mediaPresence.content} />
-  </Container>
+  <>
+    <Head>
+      <title>
+        AHORA QUE SI NOS VEN - En los medios -
+        {mediaPresence.title}
+      </title>
+      <meta name="description" content={mediaPresence.summary} />
+    </Head>
+    <Container className="mt-2">
+      <div className="detail-header">
+        <h1 className="pb-1">{mediaPresence.title}</h1>
+        <Link href="/media-presence" passHref>
+          <a>En los medios</a>
+        </Link>
+      </div>
+      <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
+      <MediaPresenceDetails mediaPresence={mediaPresence} />
+      <Markdown source={mediaPresence.content} />
+    </Container>
+  </>
 );
 
 export default MediaPresence;

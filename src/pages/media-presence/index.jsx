@@ -1,12 +1,16 @@
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Head from 'next/head';
 import CardForList from '../../components/cardForList';
 import { fetchMediaPresences } from '../../data/media-presence';
 
 
 const MediaPresences = ({ mediaPresences }) => (
   <>
+    <Head>
+      <title>AHORA QUE SI NOS VEN - En los medios</title>
+    </Head>
     <div className="section-header">
       <h2>En los Medios</h2>
     </div>

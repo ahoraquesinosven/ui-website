@@ -9,9 +9,9 @@ import Image from 'react-bootstrap/Image';
 import Link from 'next/link';
 
 const FooterIcon = ({
-  icon, linkUrl, size,
+  icon, linkUrl, size, network,
 }) => (
-  <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="bg-dark mr-2 footer-icon">
+  <a href={linkUrl} rel="noopener noreferrer" target="_blank" className="bg-dark mr-2 footer-icon" aria-label={network}>
     <FontAwesomeIcon icon={icon} size={size} />
   </a>
 );
@@ -28,21 +28,25 @@ const Footer = () => (
               icon={faInstagramSquare}
               linkUrl="https://www.instagram.com/ahoraquesinosvenok/"
               size="3x"
+              network="Instagram account del observatorio ahora que si nos ven"
             />
             <FooterIcon
               icon={faTwitterSquare}
               linkUrl="https://twitter.com/ahoraquesinosv4"
               size="3x"
+              network="Twitter account del observatorio ahora que si nos ven"
             />
             <FooterIcon
               icon={faFacebookSquare}
               linkUrl="https://www.facebook.com/ahoraquesinosven/"
               size="3x"
+              network="Facebook account del observatorio ahora que si nos ven"
             />
             <FooterIcon
               icon={faYoutubeSquare}
               linkUrl="https://www.youtube.com/channel/UCt6qbrrlGd9BSjDqANOdh8g"
               size="3x"
+              network="YouTube account del observatorio ahora que si nos ven"
             />
           </div>
           <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
@@ -83,11 +87,13 @@ const Footer = () => (
             icon={faInstagramSquare}
             linkUrl="https://www.instagram.com/somosmarea_/"
             size="2x"
+            network="Instagram de Marea"
           />
           <FooterIcon
             icon={faFacebookSquare}
             linkUrl="https://www.facebook.com/MAREA-Feminismo-Popular-y-Disidente-295569761292674/"
             size="2x"
+            network="Facebook de Marea"
           />
         </Col>
       </Row>

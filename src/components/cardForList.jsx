@@ -18,16 +18,24 @@ const contentRouting = (content, kind) => {
   };
 };
 
+const extractImageAlt = (content) => {
+  if (content.mainImage) {
+    return content.mainImage.alternativeText;
+  }
+
+  if (content.mainImageAlt) {
+    return content.mainImageAlt;
+  }
+
+  return '';
+};
 
 const CardForList = ({
   content, kind, mainDate, badge,
 }) => {
-  let cardImage = null;
-  if (content.mainImageUrl) {
-    cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" />;
-  } else {
-    cardImage = <Card.Img variant="top" src={content.mainImage.url} className="mb-1 fluid rounded" alt={content.mainImage.alternativeText} />;
-  }
+  const cardImageUrl = content.mainImageUrl ? content.mainImageUrl : content.mainImage.url;
+  const cardImageAlt = extractImageAlt(content);
+  const cardImage = <Card.Img variant="top" src={cardImageUrl} alt={cardImageAlt} className="mb-1 fluid rounded" />;
 
   return (
     <Link {...contentRouting(content, kind)}>

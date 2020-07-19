@@ -80,7 +80,7 @@ const ImportantSections = () => (
         title="Escuchanos"
         description="Modo Glitter es nuestro programa de radio. Todos los sábados 16hs en FM Tribu 88.7"
         linkUrl="https://www.youtube.com/c/modoglitter?utm_source=sitio-observatorio&utm_medium=home-page&utm_campaign=link-home-page-observatorio"
-        alt="Megafono que  representa el logo de nuestra radio que se llama Modo Glitter"
+        alt="Megáfono que representa el logo de nuestra radio Modo Glitter"
       />
     </Row>
   </section>

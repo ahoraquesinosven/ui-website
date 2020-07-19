@@ -28,29 +28,29 @@ const Footer = () => (
               icon={faInstagramSquare}
               linkUrl="https://www.instagram.com/ahoraquesinosvenok/"
               size="3x"
-              network="Instagram account del observatorio ahora que si nos ven"
+              network="Cuenta de Instagram del observatorio ahora que si nos ven"
             />
             <FooterIcon
               icon={faTwitterSquare}
               linkUrl="https://twitter.com/ahoraquesinosv4"
               size="3x"
-              network="Twitter account del observatorio ahora que si nos ven"
+              network="Cuenta de Twitter del observatorio ahora que si nos ven"
             />
             <FooterIcon
               icon={faFacebookSquare}
               linkUrl="https://www.facebook.com/ahoraquesinosven/"
               size="3x"
-              network="Facebook account del observatorio ahora que si nos ven"
+              network="Cuenta de Facebook del observatorio ahora que si nos ven"
             />
             <FooterIcon
               icon={faYoutubeSquare}
               linkUrl="https://www.youtube.com/channel/UCt6qbrrlGd9BSjDqANOdh8g"
               size="3x"
-              network="YouTube account del observatorio ahora que si nos ven"
+              network="Cuenta de YouTube del observatorio ahora que si nos ven"
             />
           </div>
           <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
-            <Image src="/images/modo-glitter-logo.png" height="70px" alt="Megafono de nuestra Radio Modo Glitter" />
+            <Image src="/images/modo-glitter-logo.png" height="70px" alt="Megáfono de nuestra Radio Modo Glitter" />
           </a>
         </Col>
         <Col xs={12} md={4} className="text-center mb-5">

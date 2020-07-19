@@ -50,7 +50,7 @@ const Footer = () => (
           </a>
         </Col>
         <Col xs={12} md={4} className="text-center mb-5">
-          <h5 className="text-primary"><b>SECCIONES</b></h5>
+          <h5 className="text-primary"><strong>SECCIONES</strong></h5>
           <Link href="/reports?category=registro-femicidios" passHref>
             <a>Femicidios</a>
           </Link>

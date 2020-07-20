@@ -26,7 +26,7 @@ const CardForList = ({
   if (content.mainImageUrl) {
     cardImage = <Card.Img variant="top" src={content.mainImageUrl} className="mb-1 fluid rounded" />;
   } else {
-    cardImage = <Card.Img variant="top" src={content.mainImage.url} className="mb-1 fluid rounded" />;
+    cardImage = <Card.Img variant="top" src={content.mainImage.url} className="mb-1 fluid rounded" alt={content.mainImage.alternativeText} />;
   }
 
   return (

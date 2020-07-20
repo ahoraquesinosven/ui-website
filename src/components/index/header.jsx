@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 const Header = () => (
   <Navbar bg="light" expand="md" sticky="top" className="shadow">
     <Container fluid>
+      <h1 hidden>Observatorio de las Violencias de Género Ahora que si nos ven</h1>
       <Link href="/" passHref>
         <Navbar.Brand>
           <img src="/images/LogoAQSNV.svg" height="90px" width="195" alt="Observatorio de las Violencias de Género Ahora que si nos ven" />

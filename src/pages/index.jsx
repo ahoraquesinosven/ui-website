@@ -42,12 +42,12 @@ const ProperLink = ({ linkUrl, children }) => {
 };
 
 const ImportantSectionColumn = ({
-  imageUrl, title, description, linkUrl,
+  imageUrl, title, description, linkUrl, alt,
 }) => (
   <Col md={4} className="d-flex flex-column align-items-center">
     <div className="important-section-icon rounded-circle">
       <ProperLink linkUrl={linkUrl}>
-        <Image src={imageUrl} roundedCircle fluid />
+        <Image src={imageUrl} roundedCircle fluid alt={alt} />
       </ProperLink>
     </div>
     <h4 className="font-weight-bold">{title}</h4>
@@ -66,18 +66,21 @@ const ImportantSections = () => (
         title="Femicidios en 2020"
         description="Registro de femicidios durante el año actual, elaborado a partir del análisis de medios gráficos y digitales de todo el país."
         linkUrl="reports?category=registro-femicidios&category=informe-femicidios&fromDate=2020-01-01"
+        alt="Informes y registros mensuales con los femicidios de 2020"
       />
       <ImportantSectionColumn
         imageUrl="/images/iconos-01.jpg"
         title="Recursos"
         description="Descarga distintas herramientas para realizar actividades y talleres relacionados con género"
         linkUrl="reports?category=recursos"
+        alt="Opcion para descargar recursos sobre leyes, feminismo, género y diversidad"
       />
       <ImportantSectionColumn
         imageUrl="/images/radio-1.jpg"
         title="Escuchanos"
         description="Modo Glitter es nuestro programa de radio. Todos los sábados 16hs en FM Tribu 88.7"
         linkUrl="https://www.youtube.com/c/modoglitter?utm_source=sitio-observatorio&utm_medium=home-page&utm_campaign=link-home-page-observatorio"
+        alt="Megáfono que representa el logo de nuestra radio Modo Glitter"
       />
     </Row>
   </section>

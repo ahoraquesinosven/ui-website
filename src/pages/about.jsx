@@ -15,21 +15,21 @@ const MemberSocialLinks = ({ member }) => {
   let linkedInLink;
   if (member.twitter) {
     twitterLink = (
-      <Card.Link href={member.twitter} rel="noopener noreferrer" target="_blank">
+      <Card.Link href={member.twitter} rel="noopener noreferrer" target="_blank" aria-label={`Twitter de ${member.name}`}>
         <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
       </Card.Link>
     );
   }
   if (member.instagram) {
     instagramLink = (
-      <Card.Link href={member.instagram} rel="noopener noreferrer" target="_blank">
+      <Card.Link href={member.instagram} rel="noopener noreferrer" target="_blank" aria-label={`Instagram de ${member.name}`}>
         <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
       </Card.Link>
     );
   }
   if (member.linkedIn) {
     linkedInLink = (
-      <Card.Link href={member.linkedIn} rel="noopener noreferrer" target="_blank">
+      <Card.Link href={member.linkedIn} rel="noopener noreferrer" target="_blank" aria-label={`LinkedIn de ${member.name}`}>
         <FontAwesomeIcon icon={faLinkedin} size="2x" />
       </Card.Link>
     );
@@ -47,7 +47,7 @@ const MemberSocialLinks = ({ member }) => {
 
 const Member = ({ member }) => (
   <Card className="mb-4" style={{ height: '100%' }}>
-    <Card.Img variant="top" src={member.photo.url} style={{ height: '15em', objectFit: 'cover', objectPosition: 'top' }} />
+    <Card.Img variant="top" src={member.photo.url} alt={member.photo.alternativeText} style={{ height: '15em', objectFit: 'cover', objectPosition: 'top' }} />
     <Card.Body>
       <Card.Title>{member.name}</Card.Title>
       <Card.Text>

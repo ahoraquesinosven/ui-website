@@ -8,6 +8,7 @@ const contentBaseUrls = {
   media_presence: '/media-presence',
   report: '/reports',
   campaign: '/campaigns',
+  article: '/articles',
 };
 
 const contentRouting = (content, kind) => {

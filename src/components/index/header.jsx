@@ -24,6 +24,9 @@ const Header = () => (
           <Link href="/campaigns" passHref>
             <Nav.Link>Campañas</Nav.Link>
           </Link>
+          <Link href="/articles" passHref>
+            <Nav.Link>Artículos</Nav.Link>
+          </Link>
           <Link href="/media-presence" passHref>
             <Nav.Link>En Los Medios</Nav.Link>
           </Link>

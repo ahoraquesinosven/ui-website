@@ -7,6 +7,7 @@ const contentKindTranslation = {
   media_presence: 'En los medios',
   report: 'Informe',
   campaign: 'Campaña',
+  article: 'Artículo',
 };
 
 

@@ -67,6 +67,10 @@ const Footer = () => (
             <a>Campañas</a>
           </Link>
           <br />
+          <Link href="/articles" passHref>
+            <a>Artículos</a>
+          </Link>
+          <br />
           <Link href="/media-presence" passHref>
             <a>En Los Medios</a>
           </Link>

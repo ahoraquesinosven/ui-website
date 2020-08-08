@@ -36,13 +36,14 @@ const Articles = ({ articles, categories }) => (
       <Row lg={3} md={2} sm={1}>
         {articles.map((article) => (
           <Col key={article.id} className="mb-5">
-            <CardForList content={article} kind="article" mainDate={article.articleDate} badge={article.category.title} />
+            <CardForList content={article} kind="article" mainDate={article.articleDate} badge={article.category ? article.category.title : ''} />
           </Col>
         ))}
       </Row>
     </Container>
   </>
 );
+
 
 export default Articles;
 

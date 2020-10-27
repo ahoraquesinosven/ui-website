@@ -12,6 +12,7 @@ services:
     volumes:
       - ./src:/app/src/
       - ./public:/app/public/
+      - ./next.config.json:/app/next.config.json
       - ./package.json:/app/package.json
       - ./package-lock.json:/app/package-lock.json
       - ./.eslintrc:/app/.eslintrc

@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from './api';
 
 const associatedContentSettings = [
   { field: 'activity', baseUrl: 'activities' },
@@ -8,7 +8,7 @@ const associatedContentSettings = [
 ];
 
 const fetchHomeImages = async () => {
-  const response = await fetch('https://api-website-veg6bn7zeq-uc.a.run.app/home-images/?_sort=updated_at:DESC&_limit=3');
+  const response = await fetch('home-images/?_sort=updated_at:DESC&_limit=3');
   const result = await response.json();
   return result.map((home) => {
     const { field, baseUrl } = associatedContentSettings.find(

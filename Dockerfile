@@ -11,7 +11,8 @@ COPY .eslintrc ./
 COPY package*.json ./
 RUN npm install
 
-# Setup the pages
+# Setup the rest of the application
+COPY next.config.js ./
 COPY src ./src
 COPY public ./public 
 

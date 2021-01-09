@@ -82,9 +82,9 @@ const Footer = () => (
           </Link>
         </Col>
         <Col xs={12} md={4} className="text-md-right text-center mb-5">
-        <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
-          <Image src="/images/modo-glitter-logo.png" height="70px" alt="Megáfono de nuestra Radio Modo Glitter" />
-        </a>
+          <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
+            <Image src="/images/modo-glitter-logo.png" height="70px" alt="Megáfono de nuestra Radio Modo Glitter" />
+          </a>
         </Col>
       </Row>
       <div className="mb-3 text-center text-muted footer-line">

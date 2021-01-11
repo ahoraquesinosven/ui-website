@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Markdown from '../components/markdown-renderer';
 import OptionalImage from '../components/optional-image';
-import { fetchAboutUs, fetchMembers } from '../data/about-us-members';
+import { fetchAboutUs, fetchMembers, fetchCollaborators } from '../data/about-us-members';
 
 
 const MemberSocialLinks = ({ member }) => {
@@ -58,7 +58,8 @@ const Member = ({ member }) => (
   </Card>
 );
 
-const AboutUs = ({ aboutUs, members }) => (
+
+const AboutUs = ({ aboutUs, members, collaborators }) => (
   <>
     <div className="section-header">
       <h2>{aboutUs.title}</h2>
@@ -70,7 +71,15 @@ const AboutUs = ({ aboutUs, members }) => (
       <Row lg={3} md={2} sm={1} xs={1}>
         {members.map((member) => (
           <Col className="mb-4" key={member.id}>
-            <Member member={member} />
+            <Member member={member}/>
+          </Col>
+        ))}
+      </Row>
+      <h2>Colaboradoras</h2>
+      <Row lg={3} md={2} sm={1} xs={1}>
+        {collaborators.map((member) => (
+          <Col className="mb-4" key={member.id}>
+            <Member member={member}/>
           </Col>
         ))}
       </Row>
@@ -83,11 +92,13 @@ export default AboutUs;
 export async function getServerSideProps() {
   const aboutUs = await fetchAboutUs();
   const members = await fetchMembers();
+  const collaborators = await fetchCollaborators();
 
   return {
     props: {
       aboutUs,
       members,
+      collaborators,
     },
   };
 }

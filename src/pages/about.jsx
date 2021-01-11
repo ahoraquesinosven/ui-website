@@ -71,7 +71,7 @@ const AboutUs = ({ aboutUs, members, collaborators }) => (
       <Row lg={3} md={2} sm={1} xs={1}>
         {members.map((member) => (
           <Col className="mb-4" key={member.id}>
-            <Member member={member}/>
+            <Member member={member} />
           </Col>
         ))}
       </Row>
@@ -79,7 +79,7 @@ const AboutUs = ({ aboutUs, members, collaborators }) => (
       <Row lg={3} md={2} sm={1} xs={1}>
         {collaborators.map((member) => (
           <Col className="mb-4" key={member.id}>
-            <Member member={member}/>
+            <Member member={member} />
           </Col>
         ))}
       </Row>

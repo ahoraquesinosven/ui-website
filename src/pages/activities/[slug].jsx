@@ -8,8 +8,6 @@ import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import { fetchActivity } from '../../data/activities';
 
-moment.locale('es');
-
 const ActivityDetails = ({ activity }) => {
   const encodedLocation = encodeURIComponent(activity.location);
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;

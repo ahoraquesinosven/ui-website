@@ -2,8 +2,6 @@ import moment from 'moment';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-moment.locale('es');
-
 const Date = ({ date, format, ...rest }) => {
   const parsedDate = moment(date);
 

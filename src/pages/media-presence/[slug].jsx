@@ -8,8 +8,6 @@ import Markdown from '../../components/markdown-renderer';
 import OptionalImage from '../../components/optional-image';
 import { fetchMediaPresence } from '../../data/media-presence';
 
-moment.locale('es');
-
 const MediaPresenceDetails = ({ mediaPresence }) => (
   <div className="text-center mb-5">
     <b className="pr-1">Publicación:</b>

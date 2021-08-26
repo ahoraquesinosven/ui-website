@@ -10,9 +10,6 @@ import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
 import { fetchArticle } from '../../data/articles';
 
-moment.locale('es');
-
-
 const ArticleDetails = ({ article }) => {
   let resultForAttachment;
   let resultForAuthor;

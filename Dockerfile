@@ -1,4 +1,4 @@
-FROM node:13
+FROM node:17
 
 # Ensure we have a valid working directory
 RUN mkdir -p /app
@@ -13,7 +13,7 @@ RUN npm install
 
 # Setup the pages
 COPY src ./src
-COPY public ./public 
+COPY public ./public
 
 
 # Compile the application

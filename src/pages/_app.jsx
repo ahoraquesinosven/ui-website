@@ -1,3 +1,5 @@
+import moment from 'moment';
+import 'moment/locale/es';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '../styles/main.scss';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -5,6 +7,7 @@ import Head from 'next/head';
 import Header from '../components/index/header';
 import Footer from '../components/index/footer';
 
+moment.locale('es');
 config.autoAddCss = false;
 
 const Application = ({ Component, pageProps }) => (

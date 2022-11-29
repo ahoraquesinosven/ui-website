@@ -63,10 +63,10 @@ const ImportantSections = () => (
     <Row>
       <ImportantSectionColumn
         imageUrl="/images/informe-1.jpg"
-        title="Femicidios en 2020"
-        description="Registro de femicidios durante el año actual, elaborado a partir del análisis de medios gráficos y digitales de todo el país."
-        linkUrl="reports?category=registro-femicidios&category=informe-femicidios&fromDate=2020-01-01"
-        alt="Informes y registros mensuales con los femicidios de 2020"
+        title="Femicidios en 2021"
+        description="Registro de femicidios durante el año 2021, elaborado a partir del análisis de medios gráficos y digitales de todo el país."
+        linkUrl="reports?category=registro-femicidios&category=informe-femicidios&fromDate=2021-01-01"
+        alt="Informes y registros mensuales con los femicidios de 2021"
       />
       <ImportantSectionColumn
         imageUrl="/images/iconos-01.jpg"

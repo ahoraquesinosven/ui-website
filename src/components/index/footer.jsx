@@ -49,9 +49,7 @@ const Footer = () => (
               network="Cuenta de YouTube del observatorio ahora que si nos ven"
             />
           </div>
-          <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
-            <Image src="/images/modo-glitter-logo.png" height="70px" alt="Megáfono de nuestra Radio Modo Glitter" />
-          </a>
+
         </Col>
         <Col xs={12} md={4} className="text-center mb-5">
           <h5 className="text-primary"><strong>SECCIONES</strong></h5>
@@ -84,21 +82,9 @@ const Footer = () => (
           </Link>
         </Col>
         <Col xs={12} md={4} className="text-md-right text-center mb-5">
-          <div className="mb-2">
-            <Image src="/images/marea.png" height="35px" alt="Marea Feminismo Popular" />
-          </div>
-          <FooterIcon
-            icon={faInstagramSquare}
-            linkUrl="https://www.instagram.com/somosmarea_/"
-            size="2x"
-            network="Instagram de Marea"
-          />
-          <FooterIcon
-            icon={faFacebookSquare}
-            linkUrl="https://www.facebook.com/MAREA-Feminismo-Popular-y-Disidente-295569761292674/"
-            size="2x"
-            network="Facebook de Marea"
-          />
+          <a href="https://www.instagram.com/modoglitter/" rel="noopener noreferrer" target="_blank" className="mt-2">
+            <Image src="/images/modo-glitter-logo.png" height="70px" alt="Megáfono de nuestra Radio Modo Glitter" />
+          </a>
         </Col>
       </Row>
       <div className="mb-3 text-center text-muted footer-line">

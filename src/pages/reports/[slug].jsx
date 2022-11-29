@@ -10,9 +10,6 @@ import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
 import { fetchReport } from '../../data/reports';
 
-moment.locale('es');
-
-
 const ReportDetails = ({ report }) => {
   let resultForLaw;
   let resultForAttachment;

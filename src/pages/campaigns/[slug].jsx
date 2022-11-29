@@ -10,8 +10,6 @@ import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
 import { fetchCampaign } from '../../data/campaigns';
 
-moment.locale('es');
-
 
 const CampaignDetails = ({ campaign }) => {
   let resultForLaw;

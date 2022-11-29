@@ -7,6 +7,6 @@ const apiUrl = (path) => `${serverRuntimeConfig.api.root}/${path}`;
 
 const fetch = (path, options) => {
   return nodeFetch(apiUrl(path), options);
-};
+ };
 
 export default fetch;

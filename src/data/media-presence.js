@@ -1,13 +1,13 @@
-import fetch from 'node-fetch';
+import fetch from './api';
 
 const fetchMediaPresence = async (slug) => {
-  const response = await fetch(`https://api-website-veg6bn7zeq-uc.a.run.app/media-presences?slug=${slug}`);
+  const response = await fetch(`media-presences?slug=${slug}`);
   const result = await response.json();
   return (result && result.length === 1) ? result[0] : null;
 };
 
 const fetchMediaPresences = async () => {
-  const response = await fetch('https://api-website-veg6bn7zeq-uc.a.run.app/media-presences?_sort=publicationDate:DESC');
+  const response = await fetch('media-presences?_sort=publicationDate:DESC');
   return response.json();
 };
 export { fetchMediaPresence, fetchMediaPresences };

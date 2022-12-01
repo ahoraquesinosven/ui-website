@@ -39,25 +39,27 @@ const CardForList = ({
   const cardImage = <Card.Img variant="top" src={cardImageUrl} alt={cardImageAlt} className="mb-1 fluid rounded" />;
 
   return (
-    <Link {...contentRouting(content, kind)}>
-      <a className="text-primary text-decoration-none">
-        <Card className="shadow p-3 bg-white rounded" style={{ height: '100%' }}>
-          {cardImage}
-          <Card.Body>
-            <Card.Title className="text-uppercase">{content.title}</Card.Title>
-            <p>
-              <Badge variant="primary">{badge}</Badge>
-              <Badge>
-                <Date className="text-muted" date={mainDate} format={(date) => date.fromNow()} />
-              </Badge>
-            </p>
-            <Card.Text className="text-dark">
-              {content.summary}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </a>
-    </Link>
+    (<Link
+      {...contentRouting(content, kind)}
+      className="text-primary text-decoration-none">
+
+      <Card className="shadow p-3 bg-white rounded" style={{ height: '100%' }}>
+        {cardImage}
+        <Card.Body>
+          <Card.Title className="text-uppercase">{content.title}</Card.Title>
+          <p>
+            <Badge variant="primary">{badge}</Badge>
+            <Badge>
+              <Date className="text-muted" date={mainDate} format={(date) => date.fromNow()} />
+            </Badge>
+          </p>
+          <Card.Text className="text-dark">
+            {content.summary}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+    </Link>)
   );
 };
 

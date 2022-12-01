@@ -57,7 +57,7 @@ const Article = ({ article }) => (
       <div className="detail-header">
         <h1 className="pb-1">{article.title}</h1>
         <Link href={{ pathname: '/articles', query: { category: article.category.slug } }} passHref>
-          <a>{article.category.title}</a>
+          {article.category.title}
         </Link>
       </div>
       <OptionalImage image={article.mainImage} fluid rounded className="mt-3 mb-3 content-image" />

@@ -59,7 +59,7 @@ const Campaign = ({ campaign }) => (
       <div className="detail-header">
         <h1 className="pb-1">{campaign.title}</h1>
         <Link href="/campaigns" passHref>
-          <a>Campaña</a>
+          Campaña
         </Link>
       </div>
       <OptionalImage image={campaign.mainImage} fluid rounded className="mt-3 mb-3 content-image" />

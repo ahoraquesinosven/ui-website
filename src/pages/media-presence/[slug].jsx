@@ -34,7 +34,7 @@ const MediaPresence = ({ mediaPresence }) => (
       <div className="detail-header">
         <h1 className="pb-1">{mediaPresence.title}</h1>
         <Link href="/media-presence" passHref>
-          <a>En los medios</a>
+          En los medios
         </Link>
       </div>
       <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mt-3 mb-3 content-image" />

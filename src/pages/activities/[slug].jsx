@@ -37,7 +37,7 @@ const Activity = ({ activity }) => (
       <div className="detail-header">
         <h1 className="pb-1">{activity.title}</h1>
         <Link href={{ pathname: '/activities', query: { category: activity.category.slug } }} passHref>
-          <a>{activity.category.title}</a>
+          {activity.category.title}
         </Link>
       </div>
       <OptionalImage image={activity.mainImage} fluid rounded className="mt-3 mb-3 content-image" />

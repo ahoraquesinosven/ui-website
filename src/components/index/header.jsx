@@ -21,7 +21,8 @@ const Header = () => (
           <Link
             href="/reports?categoryExcluded=registro-femicidios"
             passHref
-            legacyBehavior>
+            legacyBehavior
+          >
             <Nav.Link>Informes</Nav.Link>
           </Link>
           <Link href="/campaigns" passHref legacyBehavior>

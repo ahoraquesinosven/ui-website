@@ -15,7 +15,7 @@ const Intro = ({ homeImages }) => (
     {homeImages.map((home) => (
       <Carousel.Item key={home.id}>
         <img src={home.mainImage.url} className="d-block w-100 " alt={home.mainImageTitle} />
-        <Link href={home.URL} passHref>
+        <Link href={home.URL} passHref legacyBehavior>
           <Carousel.Caption>
             <h2 className="display-1">{home.mainImageTitle}</h2>
             <p>{home.mainImageSubTitle}</p>
@@ -36,7 +36,7 @@ const ProperLink = ({ linkUrl, children }) => {
   }
   return (
     <Link href={linkUrl}>
-      <a>{children}</a>
+      {children}
     </Link>
   );
 };

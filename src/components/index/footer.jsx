@@ -54,31 +54,31 @@ const Footer = () => (
         <Col xs={12} md={4} className="text-center mb-5">
           <h5 className="text-primary"><strong>SECCIONES</strong></h5>
           <Link href="/reports?category=registro-femicidios" passHref>
-            <a>Femicidios</a>
+            Femicidios
           </Link>
           <br />
           <Link href="/reports?categoryExcluded=registro-femicidios" passHref>
-            <a>Informes</a>
+            Informes
           </Link>
           <br />
           <Link href="/campaigns" passHref>
-            <a>Campañas</a>
+            Campañas
           </Link>
           <br />
           <Link href="/articles" passHref>
-            <a>Artículos</a>
+            Artículos
           </Link>
           <br />
           <Link href="/media-presence" passHref>
-            <a>En Los Medios</a>
+            En Los Medios
           </Link>
           <br />
           <Link href="/activities" passHref>
-            <a>Actividades</a>
+            Actividades
           </Link>
           <br />
           <Link href="/about" passHref>
-            <a>Quiénes Somos</a>
+            Quiénes Somos
           </Link>
         </Col>
         <Col xs={12} md={4} className="text-md-right text-center mb-5">

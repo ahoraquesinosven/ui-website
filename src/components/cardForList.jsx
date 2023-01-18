@@ -39,8 +39,12 @@ const CardForList = ({
   const cardImage = <Card.Img variant="top" src={cardImageUrl} alt={cardImageAlt} className="mb-1 fluid rounded" />;
 
   return (
-    <Link {...contentRouting(content, kind)}>
-      <a className="text-primary text-decoration-none">
+    (
+      <Link
+        {...contentRouting(content, kind)}
+        className="text-primary text-decoration-none"
+      >
+
         <Card className="shadow p-3 bg-white rounded" style={{ height: '100%' }}>
           {cardImage}
           <Card.Body>
@@ -56,8 +60,8 @@ const CardForList = ({
             </Card.Text>
           </Card.Body>
         </Card>
-      </a>
-    </Link>
+      </Link>
+    )
   );
 };
 

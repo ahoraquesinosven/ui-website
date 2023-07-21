@@ -8,7 +8,6 @@ import Markdown from '../components/markdown-renderer';
 import OptionalImage from '../components/optional-image';
 import { fetchAboutUs, fetchMembers, fetchCollaborators } from '../data/about-us-members';
 
-
 const MemberSocialLinks = ({ member }) => {
   let twitterLink;
   let instagramLink;
@@ -44,7 +43,6 @@ const MemberSocialLinks = ({ member }) => {
   );
 };
 
-
 const Member = ({ member }) => (
   <Card className="mb-4" style={{ height: '100%' }}>
     <Card.Img variant="top" src={member.photo.url} alt={member.photo.alternativeText} style={{ height: '15em', objectFit: 'cover', objectPosition: 'top' }} />
@@ -57,7 +55,6 @@ const Member = ({ member }) => (
     </Card.Body>
   </Card>
 );
-
 
 const AboutUs = ({ aboutUs, members, collaborators }) => (
   <>

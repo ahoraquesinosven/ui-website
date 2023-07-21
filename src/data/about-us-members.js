@@ -18,5 +18,4 @@ const fetchCollaborators = async () => {
   return collaborators;
 };
 
-
 export { fetchAboutUs, fetchMembers, fetchCollaborators };

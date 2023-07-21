@@ -16,7 +16,6 @@ const FooterIcon = ({
   </a>
 );
 
-
 const Footer = () => (
   <div className="bg-dark">
     <Container as="footer" className="mt-5">

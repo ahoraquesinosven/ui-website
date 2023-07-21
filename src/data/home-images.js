@@ -23,5 +23,4 @@ const fetchHomeImages = async () => {
   });
 };
 
-
 export default fetchHomeImages;

@@ -44,7 +44,6 @@ const Articles = ({ articles, categories }) => (
   </>
 );
 
-
 export default Articles;
 
 export async function getServerSideProps({ query }) {

@@ -5,7 +5,6 @@ import Head from 'next/head';
 import CardForList from '../../components/cardForList';
 import { fetchMediaPresences } from '../../data/media-presence';
 
-
 const MediaPresences = ({ mediaPresences }) => (
   <>
     <Head>

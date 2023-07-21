@@ -10,7 +10,6 @@ import OptionalImage from '../../components/optional-image';
 import AdditionalImagesCarousel from '../../components/additional-images-carousel';
 import { fetchCampaign } from '../../data/campaigns';
 
-
 const CampaignDetails = ({ campaign }) => {
   let resultForLaw;
   let resultForAttachment;
@@ -44,7 +43,6 @@ const CampaignDetails = ({ campaign }) => {
     </>
   );
 };
-
 
 const Campaign = ({ campaign }) => (
   <>

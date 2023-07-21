@@ -63,7 +63,6 @@ export async function getServerSideProps({ query }) {
   }
   const categoriesExcluded = await fetchReportCategories(categoryExcludedSlugs);
 
-
   const reports = await fetchReports({
     categories: categories ? (categories.map((category) => category.slug)) : null,
     categoriesExcluded: categoriesExcluded

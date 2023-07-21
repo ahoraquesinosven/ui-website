@@ -10,7 +10,6 @@ const contentKindTranslation = {
   article: 'Artículo',
 };
 
-
 const LatestNews = ({ featuredContent }) => (
   <section name="latest-news">
     <h4 className="header-text">Últimas noticias</h4>

@@ -65,5 +65,4 @@ const CardForList = ({
   );
 };
 
-
 export default CardForList;

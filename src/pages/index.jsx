@@ -9,7 +9,6 @@ import fetchHomeImages from '../data/home-images';
 import fetchFeaturedContent from '../data/featured-content';
 import LatestNews from '../components/index/latest-news';
 
-
 const Intro = ({ homeImages }) => (
   <Carousel className="intro-carousel">
     {homeImages.map((home) => (

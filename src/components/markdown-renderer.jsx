@@ -1,11 +1,11 @@
 import Markdown from 'react-markdown';
 import Image from 'react-bootstrap/Image';
 
-const customRenderers = {
-  image: (props) => (
+const components = {
+  img: (props) => (
     <Image {...props} fluid rounded className="content-image" />
   ),
-  html: ({ value }) => (
+  iframe: ({ value }) => (
     <div
       className="embed-responsive embed-responsive-16by9"
       // eslint-disable-next-line react/no-danger
@@ -16,8 +16,10 @@ const customRenderers = {
   ),
 };
 
-const CustomMarkdownRenderer = (props) => (
-  <Markdown {...props} escapeHtml={false} renderers={customRenderers} />
+const CustomMarkdownRenderer = ({ children, ...props }) => (
+  <Markdown {...props} components={components}>
+    {children}
+  </Markdown>
 );
 
 export default CustomMarkdownRenderer;

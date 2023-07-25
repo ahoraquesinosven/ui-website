@@ -42,7 +42,9 @@ const Activity = ({ activity }) => (
       </div>
       <OptionalImage image={activity.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <ActivityDetails activity={activity} />
-      <Markdown source={activity.content} />
+      <Markdown>
+        {activity.content}
+      </Markdown>
     </Container>
   </>
 );

@@ -62,7 +62,9 @@ const Campaign = ({ campaign }) => (
       </div>
       <OptionalImage image={campaign.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <CampaignDetails campaign={campaign} />
-      <Markdown source={campaign.content} />
+      <Markdown>
+        {campaign.content}
+      </Markdown>
       <AdditionalImagesCarousel images={campaign.additionalImages} />
     </Container>
   </>

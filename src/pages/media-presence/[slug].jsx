@@ -39,7 +39,9 @@ const MediaPresence = ({ mediaPresence }) => (
       </div>
       <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <MediaPresenceDetails mediaPresence={mediaPresence} />
-      <Markdown source={mediaPresence.content} />
+      <Markdown>
+        {mediaPresence.content}
+      </Markdown>
     </Container>
   </>
 );

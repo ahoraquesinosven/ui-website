@@ -62,7 +62,9 @@ const Article = ({ article }) => (
       </div>
       <OptionalImage image={article.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <ArticleDetails article={article} />
-      <Markdown source={article.content} />
+      <Markdown>
+        {article.content}
+      </Markdown>
       <AdditionalImagesCarousel images={article.additionalImages} />
     </Container>
   </>

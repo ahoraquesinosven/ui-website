@@ -63,7 +63,9 @@ const AboutUs = ({ aboutUs, members, collaborators }) => (
     </div>
     <Container className="mt-2">
       <OptionalImage image={aboutUs.cover} fluid rounded className="mb-3 content-image" />
-      <Markdown source={aboutUs.content} />
+      <Markdown>
+        {aboutUs.content}
+      </Markdown>
       <h2>Equipo</h2>
       <Row lg={3} md={2} sm={1} xs={1}>
         {members.map((member) => (

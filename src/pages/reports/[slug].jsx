@@ -64,7 +64,9 @@ const Report = ({ report }) => (
       </div>
       <OptionalImage image={report.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <ReportDetails report={report} />
-      <Markdown source={report.content} />
+      <Markdown>
+        {report.content}
+      </Markdown>
       <AdditionalImagesCarousel images={report.additionalImages} />
     </Container>
   </>

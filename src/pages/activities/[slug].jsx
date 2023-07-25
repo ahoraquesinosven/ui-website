@@ -27,10 +27,7 @@ const ActivityDetails = ({ activity }) => {
 const Activity = ({ activity }) => (
   <>
     <Head>
-      <title>
-        AHORA QUE SI NOS VEN - Actividades -
-        {activity.title}
-      </title>
+      <title>{`AHORA QUE SI NOS VEN - Actividades - ${activity.title}`}</title>
       <meta name="description" content={activity.summary} />
     </Head>
     <Container className="mt-2">

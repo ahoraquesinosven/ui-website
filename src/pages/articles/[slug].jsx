@@ -47,10 +47,7 @@ const ArticleDetails = ({ article }) => {
 const Article = ({ article }) => (
   <>
     <Head>
-      <title>
-        AHORA QUE SI NOS VEN - Artículos -
-        {article.title}
-      </title>
+      <title>{`AHORA QUE SI NOS VEN - Artículos - ${article.title}`}</title>
       <meta name="description" content={article.summary} />
     </Head>
     <Container className="mt-5">
@@ -62,7 +59,9 @@ const Article = ({ article }) => (
       </div>
       <OptionalImage image={article.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <ArticleDetails article={article} />
-      <Markdown source={article.content} />
+      <Markdown>
+        {article.content}
+      </Markdown>
       <AdditionalImagesCarousel images={article.additionalImages} />
     </Container>
   </>

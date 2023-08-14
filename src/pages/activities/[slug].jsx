@@ -27,10 +27,7 @@ const ActivityDetails = ({ activity }) => {
 const Activity = ({ activity }) => (
   <>
     <Head>
-      <title>
-        AHORA QUE SI NOS VEN - Actividades -
-        {activity.title}
-      </title>
+      <title>{`AHORA QUE SI NOS VEN - Actividades - ${activity.title}`}</title>
       <meta name="description" content={activity.summary} />
     </Head>
     <Container className="mt-2">
@@ -42,7 +39,9 @@ const Activity = ({ activity }) => (
       </div>
       <OptionalImage image={activity.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <ActivityDetails activity={activity} />
-      <Markdown source={activity.content} />
+      <Markdown>
+        {activity.content}
+      </Markdown>
     </Container>
   </>
 );

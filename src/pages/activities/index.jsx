@@ -16,10 +16,7 @@ const SectionBanner = ({ category }) => (
 const Activities = ({ activities, category }) => (
   <>
     <Head>
-      <title>
-        AHORA QUE SI NOS VEN -
-        {pageTitle(category)}
-      </title>
+      <title>{`AHORA QUE SI NOS VEN - ${pageTitle(category)}`}</title>
       <meta name="description" content="El Observatorio pretende ser un espacio de producción de información, conocimiento y formación puesto al servivio de las grandes mayorias silenciadas de nuestro país. Lo integramos personas que provenimos de distintas experiencias de formación y participación, a su vez que es un espacio abierto a la incorporación de distintos saberes. Asumimos el feminismo popular como identidad desde la cual estructuramos nuestro pensamiento, trabajo y acción. Somos parte del movimiento Marea Feminista Popular y Disidente." />
     </Head>
     <SectionBanner category={category} />

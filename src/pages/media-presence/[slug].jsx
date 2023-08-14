@@ -24,10 +24,7 @@ const MediaPresenceDetails = ({ mediaPresence }) => (
 const MediaPresence = ({ mediaPresence }) => (
   <>
     <Head>
-      <title>
-        AHORA QUE SI NOS VEN - En los medios -
-        {mediaPresence.title}
-      </title>
+      <title>{`AHORA QUE SI NOS VEN - En los medios - ${mediaPresence.title}`}</title>
       <meta name="description" content={mediaPresence.summary} />
     </Head>
     <Container className="mt-2">
@@ -39,7 +36,9 @@ const MediaPresence = ({ mediaPresence }) => (
       </div>
       <OptionalImage image={mediaPresence.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <MediaPresenceDetails mediaPresence={mediaPresence} />
-      <Markdown source={mediaPresence.content} />
+      <Markdown>
+        {mediaPresence.content}
+      </Markdown>
     </Container>
   </>
 );

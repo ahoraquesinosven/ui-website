@@ -49,10 +49,7 @@ const ReportDetails = ({ report }) => {
 const Report = ({ report }) => (
   <>
     <Head>
-      <title>
-        AHORA QUE SI NOS VEN - Informes -
-        {report.title}
-      </title>
+      <title>{`AHORA QUE SI NOS VEN - Informes - ${report.title}`}</title>
       <meta name="description" content={report.summary} />
     </Head>
     <Container className="mt-5">
@@ -64,7 +61,9 @@ const Report = ({ report }) => (
       </div>
       <OptionalImage image={report.mainImage} fluid rounded className="mt-3 mb-3 content-image" />
       <ReportDetails report={report} />
-      <Markdown source={report.content} />
+      <Markdown>
+        {report.content}
+      </Markdown>
       <AdditionalImagesCarousel images={report.additionalImages} />
     </Container>
   </>
